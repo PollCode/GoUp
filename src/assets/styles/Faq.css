@@ -1,0 +1,40 @@
+
+
+.btn-faqdrop {
+    background-color: transparent !important;
+    color: #000;
+    font-size: 16px;
+    line-height: 19.5px;
+    text-decoration: none;
+}
+
+.faq-hr {
+    border: none;
+    height: 4px;
+    background-color: #57C086;
+}
+
+.card-faq-body {
+    border: none !important;
+    background-color: transparent !important;
+}
+
+.faq-header {
+    font-size: 48px;
+    line-height: 58.51px;
+    color: #F45137;
+}
+
+.rocketContainer{
+    position: relative; 
+    display: inline-block;
+    max-height: 100%;
+}
+
+#rocketShip {
+    width: 271px;
+    height: 437px;
+    position: absolute !important;
+    bottom: -50px !important;
+    left: 172px !important;
+}

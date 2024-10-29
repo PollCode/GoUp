@@ -1,0 +1,22 @@
+.card-team {
+    border: none !important;
+    border-radius: 0;
+    background-color: transparent !important;
+}
+
+.team-photo {
+    width: 236px;
+    height: 236px;
+}
+
+.teamWrapper {
+    background-color: #57C086;
+    position: relative; /* Permite posicionar elementos hijos de forma absoluta */
+    display: inline-block;
+}
+
+.team-header {
+    font-size: 48px;
+    line-height: 58.51px;
+    color: #000;
+}

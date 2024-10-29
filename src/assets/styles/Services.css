@@ -1,0 +1,42 @@
+.card-service {
+    border: none !important;
+    border-radius: 0;
+    background-color: transparent !important;
+}
+
+.card-body {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.card-text {
+    font-size: 16px;
+    line-height: 19.5px;
+    text-align: start;
+}
+
+.services {
+    background-color: #F2AC25;
+    position: relative; /* Permite posicionar elementos hijos de forma absoluta */
+    display: inline-block;
+}
+
+.services-header {
+    font-size: 48px;
+    line-height: 58.51px;
+    color: #000;
+}
+
+.btn-collapse {
+    color: #000;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+#planetRed {
+    width: 242.72px;
+    height: 176.64px;
+    position: absolute !important;
+    bottom: -100px !important;
+    left: 163px !important;
+}

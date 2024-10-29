@@ -1,0 +1,19 @@
+/* src/components/Hero.css */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url("../images/FondoHeader.png");
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-size: cover; /* Hace que la imagen cubra todo el fondo */
+    background-position: center;
+    font-family: 'Montserrat','Courier New', Courier, monospace;
+}
+
+.logo {
+    position: absolute;
+    width: 159px;
+    height: 103px;
+    left: 46px;
+    top: 63px;
+}
