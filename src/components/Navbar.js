@@ -54,7 +54,7 @@ const Navbar = () => {
                 className={`nav-link  ${
                   scrolled ? "nav-link-scrolled" : ""
                 } d-flex flex-column align-items-center`}
-                href="#servcice">
+                href="#service">
                 <img
                   src={servicon}
                   height={`${scrolled ? "15px" : "27px"}`}
