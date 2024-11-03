@@ -1,19 +1,43 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import rocket from "../assets/images/rocketShip.png";
 import "../assets/styles/Faq.css";
 
 const Faq = () => {
+  const [small, setSmall] = useState(false);
+
+  const handleResize = () => {
+    setSmall(window.innerWidth <= 1000);
+    console.log(window.innerWidth);
+    //console.log(small);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    window.addEventListener("DOMContentLoaded", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <div className="faq row">
-      <div className="col-lg-5 rocketContainer">
-        <img
-          src={rocket}
-          className="me-auto"
-          alt="Rocket"
-          id="rocketShip"></img>
-      </div>
-      <div className="col-lg-7 faq-box d-flex flex-column p-5">
-        <p className="text-center faq-header  mb-5">FREQUENTLY ASKED QUESTIONS</p>
+      {!small && (
+        <div className="col-lg-5 rocketContainer">
+          <img
+            src={rocket}
+            className="me-auto"
+            alt="Rocket"
+            id="rocketShip"/>
+        </div>
+      )}
+      
+      <div className="col-lg-7  faq-box d-flex flex-column p-5">
+        <p
+          className={`${
+            small ? "faq-header-small" : "faq-header "
+          } text-center  mb-5`}>
+            {small ? "FAQ" : "FREQUENTLY ASKED QUESTIONS"}
+        </p>
         <a
           className="btn-faqdrop d-flex justify-content-between"
           data-bs-toggle="collapse"
@@ -190,6 +214,16 @@ const Faq = () => {
           <hr className="faq-hr" />
         </div>
       </div>
+
+      {small && (
+        <div className="col-lg-5 rocketContainer">
+          <img
+            src={rocket}
+            className="me-auto "
+            alt="Rocket"
+            id="rocketShip-small"/>
+        </div>
+      )}
     </div>
   );
 };

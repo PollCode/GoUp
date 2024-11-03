@@ -9,11 +9,23 @@
     display: inline-block;
 }
 
+.portrait-small {
+    width: 100% !important;
+    position: relative; /* Permite posicionar elementos hijos de forma absoluta */
+    display: inline-block;
+}
+
 .main-img {
     width: 90%; /* Ajusta el tamaño según sea necesario */
     height: auto;
     margin-top: 50px;
     margin-left: 50px;
+}
+
+.main-img-small {
+    width: 100% !important; /* Ajusta el tamaño según sea necesario */
+    height: auto;
+    
 }
 
 .second-img {
@@ -23,6 +35,15 @@
     width: 291px !important; /* Ajusta el tamaño de la estampilla */
     height: 182px !important; /* Mantiene la proporción */
 }
+
+.second-img-small {
+    position: absolute !important; /* Posiciona la estampilla de forma absoluta */
+    left: 25%;
+    top: 80%  !important; /* Alinea al borde superior */
+    width: 146px !important; /* Ajusta el tamaño de la estampilla */
+    height: 87px !important; /* Mantiene la proporción */
+}
+
 
 
 .btn-call-us {
@@ -45,6 +66,12 @@
 
 .book-text {
     font-size: 48px;
+    color: #F45137;
+    line-height: 58.51px;
+}
+
+.book-text-small {
+    font-size: 30px;
     color: #F45137;
     line-height: 58.51px;
 }

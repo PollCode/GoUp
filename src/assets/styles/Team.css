@@ -15,8 +15,21 @@
     display: inline-block;
 }
 
+.teamWrapper-small {
+    background-color: #57C086;
+    width: 100% !important;
+    position: relative; /* Permite posicionar elementos hijos de forma absoluta */
+    display: inline-block;
+}
+
 .team-header {
     font-size: 48px;
+    line-height: 58.51px;
+    color: #000;
+}
+
+.team-header-small {
+    font-size: 30px;
     line-height: 58.51px;
     color: #000;
 }

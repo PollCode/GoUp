@@ -21,8 +21,22 @@
     display: inline-block;
 }
 
+.services-small {
+    background-color: #F2AC25;
+    width: 100% !important;
+    padding-top: 100px;
+    /*position: relative; /* Permite posicionar elementos hijos de forma absoluta */
+    /*display: inline-block;*/
+}
+
 .services-header {
     font-size: 48px;
+    line-height: 58.51px;
+    color: #000;
+}
+
+.services-header-small {
+    font-size: 30px;
     line-height: 58.51px;
     color: #000;
 }
@@ -39,4 +53,12 @@
     position: absolute !important;
     bottom: -100px !important;
     left: 163px !important;
+}
+
+#planetRed-small {
+    width: 115px;
+    height: 90px;
+    position: absolute !important;
+    top: -50px !important;
+    left: 103px !important;
 }

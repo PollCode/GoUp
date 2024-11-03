@@ -55,9 +55,20 @@
     border: none !important;
 }
 
+.navbar-toggler {
+    border: none; /* Quita los bordes */
+    outline: none;
+    
 
+}
 
+.navbar-toggler:focus{
+    box-shadow: none; 
+}
 
+.navbar-toggler-icon {
+    color: #F45137 !important; /* Cambia el color a rojo (puedes usar el color que desees) */
+}
 
 
 

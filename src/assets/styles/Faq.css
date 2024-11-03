@@ -25,6 +25,12 @@
     color: #F45137;
 }
 
+.faq-header-small {
+    font-size: 30px;
+    line-height: 58.51px;
+    color: #F45137;
+}
+
 .rocketContainer{
     position: relative; 
     display: inline-block;
@@ -37,4 +43,14 @@
     position: absolute !important;
     bottom: -50px !important;
     left: 172px !important;
+}
+
+#rocketShip-small {
+    width: 121px;
+    height: 185px;
+    position: absolute !important;
+    bottom: -80px !important;
+    left: 70px !important;
+    z-index: 1;
+    transform: rotate(45deg);
 }
