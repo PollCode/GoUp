@@ -1,0 +1,67 @@
+#GoUpLogo {
+    width: 191px;
+    height: 124px;
+}
+
+
+.contactus-header {
+    font-size: 48px !important;
+    line-height: 58.51px !important;
+    color: #F45137 !important;
+}
+
+.txt-help {
+    font-size: 24px !important;
+    line-height: 29.26px !important;
+    color: #7575C1 !important;
+}
+
+.contactus-sub {
+    font-size: 16px !important;
+    line-height: 19.5px !important;
+    color: #000 !important;
+}
+
+.mssg-container {
+    position: relative;
+    display: inline-block;
+}
+
+#inputName, #inputEmail, 
+#inputPhone, #selectAge, 
+#selectServ, #inputMessage {
+    border: none !important;
+}
+
+#inputName, #inputEmail,#inputPhone {
+    background-color: #57C086;
+}
+
+#selectAge, #selectServ {
+    background-color: #7575C1;
+}
+
+#inputMessage {
+    background-color: #F2AC25;
+    border-radius: 20px 0 0 20px !important;
+    
+}
+
+
+.btn-mssg {
+    background-color: #F45137;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    border-radius: 0 20px 20px 0 !important;
+    border: none;
+}
+
+.btn-mssg:hover {
+    background-color: #F45137;
+}
+
+
+
+

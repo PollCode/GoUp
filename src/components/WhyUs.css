@@ -1,0 +1,27 @@
+#redStar {
+    width: 97px;
+    height: 101px;
+}
+
+#spaceShip {
+    width: 262px;
+    height: 132px
+}
+
+.why-us-header p{
+    font-size: 48px !important;
+    line-height: 58.51px !important;
+    color: #F45137 !important;
+}
+
+.card-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+  
+.card p {
+    font-size: 1rem;
+    text-align: center;
+}
