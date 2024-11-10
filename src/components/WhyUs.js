@@ -7,6 +7,7 @@ const WhyUsCard = (props) => {
   return (
     <div className="d-flex flex-column align-items-center p-2">
       <img src={redStar} alt="Red Star" className="my-4" id="redStar"></img>
+      <h2 className="card-title">{props.title}</h2>
       <p>{props.text}</p>
     </div>
   );
@@ -35,13 +36,16 @@ const WhyUs = () => {
         <div id="carouselExample" class="carousel slide">
           <div className="carousel-inner">
             <div className="carousel-item active p-2">
-              <WhyUsCard text="Largest PPEC in Miami: Our facility is the largest PPEC in Miami, providing a spacious and comfortable environment for children to play, learn, and grow. With ample room for activities, your child will have plenty of opportunities to socialize and develop their skills in a safe and nurturing environment." />
+            <WhyUsCard title=" Why Go up PPEC?" text="At Go Up Pediatric Extended Care, we provide the highest level of support, care, and developmental guidance for your child. 
+                Our mission is to create a nurturing environment where every child can thrive, with compassionate care tailored to their unique needs." />
             </div>
             <div className="carousel-item p-2">
-              <WhyUsCard text="Largest PPEC in Miami: Our facility is the largest PPEC in Miami, providing a spacious and comfortable environment for children to play, learn, and grow. With ample room for activities, your child will have plenty of opportunities to socialize and develop their skills in a safe and nurturing environment." />
+            <WhyUsCard title="Welcome to Go Up Pediatric Extended Care (PPEC) of Miami" text="We believe in creating a place where children feel happy, safe and cared for. Our specialized Pediatric Extended Care (PPEC) services are designed to support children with special needs with compassion and skill, 
+                providing peace of mind to families in Miami. Every day, we work to make children's lives a little easier by focusing on their health, happiness and development." />
             </div>
             <div className="carousel-item p-2">
-              <WhyUsCard text="Largest PPEC in Miami: Our facility is the largest PPEC in Miami, providing a spacious and comfortable environment for children to play, learn, and grow. With ample room for activities, your child will have plenty of opportunities to socialize and develop their skills in a safe and nurturing environment." />
+            <WhyUsCard title="Our Mission" text="Our mission at Go Up is simple: to make children happy and their lives, as well as their families, a little easier. We are dedicated to providing comprehensive, 
+                personalized care in a safe and engaging environment so that every child can go up and reach their full potential.." />
             </div>
           </div>
           <button
@@ -73,13 +77,16 @@ const WhyUs = () => {
           </div>
           <div className="why-us-wrapper row p-5">
             <div className="col-4 d-flex align-items-center">
-              <WhyUsCard text="Largest PPEC in Miami: Our facility is the largest PPEC in Miami, providing a spacious and comfortable environment for children to play, learn, and grow. With ample room for activities, your child will have plenty of opportunities to socialize and develop their skills in a safe and nurturing environment." />
+              <WhyUsCard title=" Why Go up PPEC?" text="At Go Up Pediatric Extended Care, we provide the highest level of support, care, and developmental guidance for your child. 
+                Our mission is to create a nurturing environment where every child can thrive, with compassionate care tailored to their unique needs." />
             </div>
             <div className="col-4 d-flex align-items-center">
-              <WhyUsCard text="Largest PPEC in Miami: Our facility is the largest PPEC in Miami, providing a spacious and comfortable environment for children to play, learn, and grow. With ample room for activities, your child will have plenty of opportunities to socialize and develop their skills in a safe and nurturing environment." />
+              <WhyUsCard title="Welcome to Go Up Pediatric Extended Care (PPEC) of Miami" text="We believe in creating a place where children feel happy, safe and cared for. Our specialized Pediatric Extended Care (PPEC) services are designed to support children with special needs with compassion and skill, 
+                providing peace of mind to families in Miami. Every day, we work to make children's lives a little easier by focusing on their health, happiness and development." />
             </div>
             <div className="col-4 d-flex align-items-center">
-              <WhyUsCard text="Largest PPEC in Miami: Our facility is the largest PPEC in Miami, providing a spacious and comfortable environment for children to play, learn, and grow. With ample room for activities, your child will have plenty of opportunities to socialize and develop their skills in a safe and nurturing environment." />
+              <WhyUsCard title="Our Mission" text="Our mission at Go Up is simple: to make children happy and their lives, as well as their families, a little easier. We are dedicated to providing comprehensive, 
+                personalized care in a safe and engaging environment so that every child can go up and reach their full potential.." />
             </div>
           </div>
         </div>

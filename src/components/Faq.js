@@ -45,7 +45,7 @@ const Faq = () => {
           role="button"
           aria-expanded="false"
           aria-controls="collapseFaq-1">
-          Largest PPEC in Miami: Our facility is the largest PPEC in Miami
+          What is a PPEC?
           <svg
             width="23"
             height="17"
@@ -73,11 +73,7 @@ const Faq = () => {
         <hr className="faq-hr" />
         <div className="collapse" id="collapseFaq-1">
           <div className="card card-body card-faq-body">
-            Largest PPEC in Miami: Our facility is the largest PPEC in Miami,
-            providing a spacious and comfortable environment for children to
-            play, learn, and grow. With ample room for activities, your child
-            will have plenty of opportunities to socialize and develop their
-            skills in a safe and nurturing environment.
+          A Prescribed Pediatric Extended Care is a facility that specializes in the care of children between the ages of 0-21 who require medical attention and monitoring of their specific condition.
           </div>
           <hr className="faq-hr" />
         </div>
@@ -89,7 +85,7 @@ const Faq = () => {
           role="button"
           aria-expanded="false"
           aria-controls="collapseFaq-2">
-          Largest PPEC in Miami: Our facility is the largest PPEC in Miami
+          Who Qualifies For The PPEC Program?
           <svg
             width="23"
             height="17"
@@ -117,11 +113,7 @@ const Faq = () => {
         <hr className="faq-hr" />
         <div className="collapse" id="collapseFaq-2">
           <div className="card card-body card-faq-body">
-            Largest PPEC in Miami: Our facility is the largest PPEC in Miami,
-            providing a spacious and comfortable environment for children to
-            play, learn, and grow. With ample room for activities, your child
-            will have plenty of opportunities to socialize and develop their
-            skills in a safe and nurturing environment.
+          Medically fragile children with complex medical conditions who require skilled nursing care, and children whose needs cannot be met by a typical school or daycare and/or do not require hospitalization.
           </div>
           <hr className="faq-hr" />
         </div>
@@ -133,7 +125,7 @@ const Faq = () => {
           role="button"
           aria-expanded="false"
           aria-controls="collapseFaq-3">
-          Largest PPEC in Miami: Our facility is the largest PPEC in Miami
+          How much does it cost?
           <svg
             width="23"
             height="17"
@@ -161,11 +153,7 @@ const Faq = () => {
         <hr className="faq-hr" />
         <div className="collapse" id="collapseFaq-3">
           <div className="card card-body card-faq-body">
-            Largest PPEC in Miami: Our facility is the largest PPEC in Miami,
-            providing a spacious and comfortable environment for children to
-            play, learn, and grow. With ample room for activities, your child
-            will have plenty of opportunities to socialize and develop their
-            skills in a safe and nurturing environment.
+          Services are 100% covered by Medicaid. Our staff will handle all the enrollment requirements and process for your child's admission. We also accept insurance and private payment.
           </div>
           <hr className="faq-hr" />
         </div>
@@ -177,7 +165,7 @@ const Faq = () => {
           role="button"
           aria-expanded="false"
           aria-controls="collapseFaq-4">
-          Largest PPEC in Miami: Our facility is the largest PPEC in Miami
+          We're here for you, 12 hours a day, 7 days a week!
           <svg
             width="23"
             height="17"
@@ -205,11 +193,7 @@ const Faq = () => {
         <hr className="faq-hr" />
         <div className="collapse" id="collapseFaq-4">
           <div className="card card-body card-faq-body">
-            Largest PPEC in Miami: Our facility is the largest PPEC in Miami,
-            providing a spacious and comfortable environment for children to
-            play, learn, and grow. With ample room for activities, your child
-            will have plenty of opportunities to socialize and develop their
-            skills in a safe and nurturing environment.
+          You can go to work, school, or care for family, knowing we've got you covered.
           </div>
           <hr className="faq-hr" />
         </div>

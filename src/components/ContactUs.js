@@ -11,13 +11,10 @@ const ContactUs = () => {
           <p className="contactus-header">CONTACT US</p>
           <p className="txt-help">WELCOME</p>
           <p className="contactus-text">
-            We're glad you're interested in learning more about how we can help
-            care for your child. Please feel free to leave us a message on our
-            contact form and tell us a little bit about your child and their
-            needs. Our team is dedicated to providing the best possible care and
-            we'll work with you to create a personalized care plan that meets
-            your child's unique needs. We look forward to hearing from you!
+          By choosing Go Up, you’re selecting a team dedicated to promoting your child’s well-being and growth through specialized pediatric care and therapies. Reach out today to learn more about our services or schedule a visit—we’re here to answer all your questions and help make life a little easier for you and your family.
           </p>
+          <p className="txt-help">Get in Touch</p>
+          <p className="contactus-text">Please fill out the form below, and our team will get back to you shortly. Let’s start this journey together!</p>
         </div>
         <div className="col-lg-6 col-sm-12 mt-5 p-5">
           <form class="row g-2">
@@ -49,16 +46,28 @@ const ContactUs = () => {
             </div>
 
             <div className="col-12">
-              <select id="selectAge" className="form-select rounded-pill">
-                <option selected>How old is your child?</option>
-                <option>...</option>
-              </select>
+              <input
+                type="old"
+                className="form-control rounded-pill"
+                placeholder="How old is your child"
+                id="inputPhone"
+              />
             </div>
 
             <div className="col-12">
               <select id="selectServ" className="form-select rounded-pill">
                 <option selected>Services</option>
-                <option>...</option>
+                <option>Therapy Services</option>
+                <option>Rehabilitation Therapy</option>
+                <option>Oxygen Ventilator Therapy</option>
+                <option>Apnea Care</option>
+                <option>Tracheostomy Care</option>
+                <option>Cardiac Monitoring</option>
+                <option>GT/NT Tube Feeding</option>
+                <option>Specialty Clinic Support</option>
+                <option>Follow-Up with Primary Doctor and Specialists</option>
+                <option>Nutrition</option>
+                <option>Free Transportation</option>
               </select>
             </div>
 
