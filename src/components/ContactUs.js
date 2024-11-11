@@ -18,9 +18,9 @@ const ContactUs = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-
+  
     let error = "";
-
+  
     switch (name) {
       case "name":
         if (!/^[A-Z][a-zA-Z]*$/.test(value)) {
@@ -40,10 +40,11 @@ const ContactUs = () => {
       default:
         break;
     }
-
+  
     setErrors({ ...errors, [name]: error });
     setFormData({ ...formData, [name]: value });
   };
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -54,8 +55,10 @@ const ContactUs = () => {
       setFormError("Campos no válidos, por favor verifíquelos.");
       return;
     }
-
-    emailjs.send("service_codv2pm","template_clpwecw", formData,"W_yqO85fndwrvO0wa")
+  
+    console.log("Datos del formulario:", formData); // Verifica el contenido de formData
+  
+    emailjs.send("service_codv2pm", "template_clpwecw", formData, "W_yqO85fndwrvO0wa")
       .then((response) => {
         console.log("Email enviado con éxito!", response.status, response.text);
         setFormError(""); 
@@ -65,7 +68,7 @@ const ContactUs = () => {
           phone: "",
           age: "",
           message: "",
-          service: "Services",
+          service: "", 
         });
       })
       .catch((err) => {
@@ -73,6 +76,8 @@ const ContactUs = () => {
         setFormError("Error al enviar el formulario, por favor inténtelo de nuevo.");
       });
   };
+  
+  
 
   return (
     <>
@@ -137,26 +142,27 @@ const ContactUs = () => {
             </div>
 
             <div className="col-12">
-              <select
-                name="service"
-                id="selectServ"
-                className="form-select rounded-pill"
-                value={formData.service}
-                onChange={handleChange}
-              >
-                <option>Services</option>
-                <option>Therapy Services</option>
-                <option>Rehabilitation Therapy</option>
-                <option>Oxygen Ventilator Therapy</option>
-                <option>Apnea Care</option>
-                <option>Tracheostomy Care</option>
-                <option>Cardiac Monitoring</option>
-                <option>GT/NT Tube Feeding</option>
-                <option>Specialty Clinic Support</option>
-                <option>Follow-Up with Primary Doctor and Specialists</option>
-                <option>Nutrition</option>
-                <option>Free Transportation</option>
-              </select>
+            <select
+  name="service"
+  id="selectServ"
+  className="form-select rounded-pill"
+  value={formData.service}
+  onChange={handleChange}
+>
+  <option value="">Selecciona un servicio</option> {/* Opción vacía */}
+  <option value="Therapy Services">Therapy Services</option>
+  <option value="Rehabilitation Therapy">Rehabilitation Therapy</option>
+  <option value="Oxygen Ventilator Therapy">Oxygen Ventilator Therapy</option>
+  <option value="Apnea Care">Apnea Care</option>
+  <option value="Tracheostomy Care">Tracheostomy Care</option>
+  <option value="Cardiac Monitoring">Cardiac Monitoring</option>
+  <option value="GT/NT Tube Feeding">GT/NT Tube Feeding</option>
+  <option value="Specialty Clinic Support">Specialty Clinic Support</option>
+  <option value="Follow-Up with Primary Doctor and Specialists">Follow-Up with Primary Doctor and Specialists</option>
+  <option value="Nutrition">Nutrition</option>
+  <option value="Free Transportation">Free Transportation</option>
+</select>
+
             </div>
 
             <div className="col-12">
