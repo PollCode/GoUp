@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/GoUp/static/css/main.26976242.css",
-    "main.js": "/GoUp/static/js/main.e1429132.js",
+    "main.css": "/GoUp/static/css/main.ef18d82b.css",
+    "main.js": "/GoUp/static/js/main.cdabbd55.js",
     "static/js/453.c6c4cd1f.chunk.js": "/GoUp/static/js/453.c6c4cd1f.chunk.js",
     "static/media/astro-girl3.png": "/GoUp/static/media/astro-girl3.c24448019b2af8f50c93.png",
     "static/media/FondoHeader.png": "/GoUp/static/media/FondoHeader.60928f64d39aa23dc624.png",
@@ -11,12 +11,12 @@
     "static/media/contact-icon.svg": "/GoUp/static/media/contact-icon.ac42372aebcb728b662a6d5d6f07fded.svg",
     "static/media/service-icon.svg": "/GoUp/static/media/service-icon.5cfa84dc31fdae8dd762aa84f699c370.svg",
     "static/media/team-icon.svg": "/GoUp/static/media/team-icon.1c8e545cad301a1f00b4e951c9e624a0.svg",
-    "main.26976242.css.map": "/GoUp/static/css/main.26976242.css.map",
-    "main.e1429132.js.map": "/GoUp/static/js/main.e1429132.js.map",
+    "main.ef18d82b.css.map": "/GoUp/static/css/main.ef18d82b.css.map",
+    "main.cdabbd55.js.map": "/GoUp/static/js/main.cdabbd55.js.map",
     "453.c6c4cd1f.chunk.js.map": "/GoUp/static/js/453.c6c4cd1f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.26976242.css",
-    "static/js/main.e1429132.js"
+    "static/css/main.ef18d82b.css",
+    "static/js/main.cdabbd55.js"
   ]
 }
