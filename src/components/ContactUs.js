@@ -48,33 +48,68 @@ const ContactUs = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-    const hasErrors = Object.values(errors).some((error) => error);
-    
-    if (hasErrors) {
-      setFormError("Campos no válidos, por favor verifíquelos.");
-      return;
+
+    setErrors({});
+    setFormError("");
+
+    let hasErrors = false;
+
+    if (!formData.name) {
+        setErrors((prevErrors) => ({ ...prevErrors, name: "El nombre es obligatorio." }));
+        hasErrors = true;
+    }
+    if (!formData.email) {
+        setErrors((prevErrors) => ({ ...prevErrors, email: "El correo es obligatorio." }));
+        hasErrors = true;
+    }
+    if (!formData.phone) {
+        setErrors((prevErrors) => ({ ...prevErrors, phone: "El teléfono es obligatorio." }));
+        hasErrors = true;
+    }
+    if (!formData.age) {
+        setErrors((prevErrors) => ({ ...prevErrors, age: "La edad es obligatoria." }));
+        hasErrors = true;
     }
 
-    emailjs.send("service_codv2pm","template_clpwecw", formData,"W_yqO85fndwrvO0wa")
-      .then((response) => {
-        console.log("Email enviado con éxito!", response.status, response.text);
-        setFormError(""); 
-        setSuccessMessage("¡Formulario enviado con éxito!");
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          age: "",
-          message: "",
-          service: "",
+    if (!/^[A-ZÁÉÍÓÚÑ][a-záéíóúñA-Z]*((\s[A-ZÁÉÍÓÚÑ][a-záéíóúñA-Z]*)*)*$/.test(formData.name)) {
+        setErrors((prevErrors) => ({ ...prevErrors, name: "El nombre debe comenzar con mayúscula y solo contener letras. Ademas es obligatorio." }));
+        hasErrors = true;
+    }
+    if (!/^\d{0,12}$/.test(formData.phone)) {
+        setErrors((prevErrors) => ({ ...prevErrors, phone: "El teléfono solo puede contener números y hasta 12 dígitos." }));
+        hasErrors = true;
+    }
+    if (!/^(1[0-7]|[1-9])$/.test(formData.age)) {
+        setErrors((prevErrors) => ({ ...prevErrors, age: "La edad debe ser menor de 18 años." }));
+        hasErrors = true;
+    }
+
+    if (hasErrors) {
+        setFormError("Campos no válidos, por favor verifíquelos.");
+        return;
+    }
+
+    emailjs.send("service_codv2pm", "template_clpwecw", formData, "W_yqO85fndwrvO0wa")
+        .then((response) => {
+            console.log("Email enviado con éxito!", response.status, response.text);
+            setSuccessMessage("¡Formulario enviado con éxito!");
+            setFormData({
+                name: "",
+                email: "",
+                phone: "",
+                age: "",
+                message: "",
+                service: "",
+            });
+            setErrors({});
+        })
+        .catch((err) => {
+            console.error("Error al enviar el email: ", err);
+            setFormError("Error al enviar el formulario, por favor inténtelo de nuevo.");
+            setSuccessMessage(""); 
         });
-      })
-      .catch((err) => {
-        console.error("Error al enviar el email: ", err);
-        setFormError("Error al enviar el formulario, por favor inténtelo de nuevo.");
-      });
-  };
+};
+
 
   return (
     <>
@@ -126,7 +161,7 @@ const ContactUs = () => {
                 value={formData.phone}
                 onChange={handleChange}
               />
-              {errors.phone && <div className="text-danger">{errors.phone}</div>}
+              {errors.phone && <div className="text-danger">{errors.phone}</div>} 
             </div>
 
             <div className="col-12">
@@ -139,7 +174,7 @@ const ContactUs = () => {
                 value={formData.age}
                 onChange={handleChange}
               />
-              {errors.age && <div className="text-danger">{errors.age}</div>}
+              {errors.age && <div className="text-danger">{errors.age}</div>} 
             </div>
 
             <div className="col-12">
@@ -213,7 +248,7 @@ const ContactUs = () => {
                 </button>
               </div>
             </div>
-            {successMessage && <div className="text-success mt-3">{successMessage}</div>} 
+            {successMessage && <div className="text-success mt-3">{successMessage}</div>}
             {formError && <div className="text-danger">{formError}</div>}
           </form>
         </div>
