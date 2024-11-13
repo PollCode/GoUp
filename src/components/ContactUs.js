@@ -25,17 +25,17 @@ const ContactUs = () => {
     switch (name) {
       case "name":
         if (!/^[A-ZÁÉÍÓÚÑ][a-záéíóúñA-Z]*((\s[A-ZÁÉÍÓÚÑ][a-záéíóúñA-Z]*)*)*$/.test(value)) {
-          error = "El nombre debe comenzar con mayúscula y solo contener letras.";
+          error = "The name must begin with a capital letter and contain only letters.";
         }
         break;
       case "phone":
         if (!/^\d{0,12}$/.test(value)) {
-          error = "El teléfono solo puede contener números y hasta 12 dígitos.";
+          error = "The phone can only contain numbers and up to 12 digits.";
         }
         break;
       case "age":
         if (!/^(1[0-7]|[1-9])$/.test(value)) {
-            error = "La edad debe ser menor de 18 años.";
+            error = "The age must be under 18 years old.";
           }
         break
       default:
@@ -55,44 +55,44 @@ const ContactUs = () => {
     let hasErrors = false;
 
     if (!formData.name) {
-        setErrors((prevErrors) => ({ ...prevErrors, name: "El nombre es obligatorio." }));
+        setErrors((prevErrors) => ({ ...prevErrors, name: "The name is required." }));
         hasErrors = true;
     }
     if (!formData.email) {
-        setErrors((prevErrors) => ({ ...prevErrors, email: "El correo es obligatorio." }));
+        setErrors((prevErrors) => ({ ...prevErrors, email: "Email is mandatory." }));
         hasErrors = true;
     }
     if (!formData.phone) {
-        setErrors((prevErrors) => ({ ...prevErrors, phone: "El teléfono es obligatorio." }));
+        setErrors((prevErrors) => ({ ...prevErrors, phone: "The telephone is mandatory." }));
         hasErrors = true;
     }
     if (!formData.age) {
-        setErrors((prevErrors) => ({ ...prevErrors, age: "La edad es obligatoria." }));
+        setErrors((prevErrors) => ({ ...prevErrors, age: "Age is mandatory." }));
         hasErrors = true;
     }
 
     if (!/^[A-ZÁÉÍÓÚÑ][a-záéíóúñA-Z]*((\s[A-ZÁÉÍÓÚÑ][a-záéíóúñA-Z]*)*)*$/.test(formData.name)) {
-        setErrors((prevErrors) => ({ ...prevErrors, name: "El nombre debe comenzar con mayúscula y solo contener letras. Ademas es obligatorio." }));
+        setErrors((prevErrors) => ({ ...prevErrors, name: "The name must begin with a capital letter and contain only letters. It is also mandatory." }));
         hasErrors = true;
     }
     if (!/^\d{0,12}$/.test(formData.phone)) {
-        setErrors((prevErrors) => ({ ...prevErrors, phone: "El teléfono solo puede contener números y hasta 12 dígitos." }));
+        setErrors((prevErrors) => ({ ...prevErrors, phone: "The phone can only contain numbers and up to 12 digits." }));
         hasErrors = true;
     }
     if (!/^(1[0-7]|[1-9])$/.test(formData.age)) {
-        setErrors((prevErrors) => ({ ...prevErrors, age: "La edad debe ser menor de 18 años." }));
+        setErrors((prevErrors) => ({ ...prevErrors, age: "The age must be under 18 years old. It is also mandatory" }));
         hasErrors = true;
     }
 
     if (hasErrors) {
-        setFormError("Campos no válidos, por favor verifíquelos.");
+        setFormError("Invalid fields, please check.");
         return;
     }
 
     emailjs.send("service_codv2pm", "template_clpwecw", formData, "W_yqO85fndwrvO0wa")
         .then((response) => {
             console.log("Email enviado con éxito!", response.status, response.text);
-            setSuccessMessage("¡Formulario enviado con éxito!");
+            setSuccessMessage("Form submitted successfully!");
             setFormData({
                 name: "",
                 email: "",
