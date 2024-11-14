@@ -4,6 +4,66 @@ import logo from "../GoUp_logo.svg";
 import servicon from "../assets/icons/service-icon.svg";
 import teamicon from "../assets/icons/team-icon.svg";
 import contacticon from "../assets/icons/contact-icon.svg";
+import { styled } from "@mui/material/styles";
+import Switch from "@mui/material/Switch";
+
+
+const MaterialUISwitch = styled(Switch)(({ theme }) => ({
+  width: 62,
+  height: 34,
+  padding: 7,
+  "& .MuiSwitch-switchBase": {
+    margin: 1,
+    padding: 0,
+    transform: "translateX(6px)",
+    "&.Mui-checked": {
+      color: "#fff",
+      transform: "translateX(22px)",
+      "& .MuiSwitch-thumb:before": {
+        backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 20 20"><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="16px" fill="${encodeURIComponent(
+          "#fff"
+        )}">ES</text></svg>')`,
+      },
+      "& + .MuiSwitch-track": {
+        opacity: 1,
+        backgroundColor: "#aab4be",
+        ...theme.applyStyles("dark", {
+          backgroundColor: "#8796A5",
+        }),
+      },
+    },
+  },
+  "& .MuiSwitch-thumb": {
+    backgroundColor: "#001e3c",
+    width: 32,
+    height: 32,
+    "&::before": {
+      content: "''",
+      position: "absolute",
+      width: "100%",
+      height: "100%",
+      left: 0,
+      top: 0,
+      backgroundRepeat: "no-repeat",
+      backgroundPosition: "center",
+      backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 20 20"><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="16px" fill="${encodeURIComponent(
+        "#fff"
+      )}">EN</text></svg>')`,
+    },
+    ...theme.applyStyles("dark", {
+      backgroundColor: "#003892",
+    }),
+  },
+  "& .MuiSwitch-track": {
+    opacity: 1,
+    backgroundColor: "#aab4be",
+    borderRadius: 20 / 2,
+    ...theme.applyStyles("dark", {
+      backgroundColor: "#8796A5",
+    }),
+  },
+}));
+
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -68,17 +128,20 @@ const Navbar = () => {
             id="navbarSupportedContent">
             <ul
               className={`navbar-nav ${
-                small && !scrolled ? "d-flex flex-row justify-content-center " : ""
-              } ${scrolled && small ? "ms-auto d-flex flex-column" : ""
-              } ${scrolled && !small ? "mx-auto d-flex flex-row" : ""
-              } ${!scrolled && !small ? "mx-auto d-flex flex-row" : ""
-              }`}>
+                small && !scrolled
+                  ? "d-flex flex-row justify-content-center "
+                  : ""
+              } ${scrolled && small ? "ms-auto d-flex flex-column" : ""} ${
+                scrolled && !small ? "mx-auto d-flex flex-row" : ""
+              } ${!scrolled && !small ? "mx-auto d-flex flex-row" : ""}`}>
               <li className="nav-item mx-4">
                 <a
                   className={`nav-link  ${
                     scrolled ? "nav-link-scrolled" : ""
-                  } ${small? "nav-link-scrolled" : ""} d-flex flex-column align-items-center`}
-                  href={`${small ? "#service-s": "#service"}`} >
+                  } ${
+                    small ? "nav-link-scrolled" : ""
+                  } d-flex flex-column align-items-center`}
+                  href={`${small ? "#service-s" : "#service"}`}>
                   <img
                     src={servicon}
                     height={`${scrolled ? "15px" : "27px"}`}
@@ -96,7 +159,7 @@ const Navbar = () => {
                   } ${
                     small ? "nav-link-scrolled" : ""
                   }  d-flex flex-column align-items-center`}
-                  href={`${small ? "#team-s": "#team"}`}>
+                  href={`${small ? "#team-s" : "#team"}`}>
                   <img
                     src={teamicon}
                     height={`${scrolled ? "15px" : "27px"}`}
@@ -127,8 +190,11 @@ const Navbar = () => {
               </li>
             </ul>
             {scrolled && (
-              <div className= "d-flex flex-row align-items-center whatsapp-link">
-                <a className="btn btn-success rounded-pill mx-auto" href="#whatsapp">
+              <div className="d-flex flex-row align-items-center whatsapp-link">
+                <MaterialUISwitch className="mx-auto"/>
+                <a
+                  className="btn btn-success rounded-pill mx-auto"
+                  href="#whatsapp">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="25px"
