@@ -105,7 +105,7 @@ const ContactUs = () => {
         })
         .catch((err) => {
             console.error("Error al enviar el email: ", err);
-            setFormError("Error al enviar el formulario, por favor inténtelo de nuevo.");
+            setFormError("Error submitting the form, please try again.");
             setSuccessMessage(""); 
         });
 };
