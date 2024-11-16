@@ -102,16 +102,25 @@ const Navbar = () => {
             {scrolled && <img src={logo} alt="Logo" className="navbar-logo" />}
           </a>
           {small && scrolled && (
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation">
-              <span className="navbar-toggler-icon"></span>
-            </button>
+            <>
+              <MaterialUISwitch 
+                className="ms-auto" 
+                checked={isSpanish} 
+                onChange={toggleLanguage} // Cambia el idioma al hacer clic
+              />
+
+              <button
+                className="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
+              </button>
+            </>
+            
           )}
 
           <div
@@ -184,11 +193,13 @@ const Navbar = () => {
             </ul>
             {scrolled && (
               <div className="d-flex flex-row align-items-center whatsapp-link">
-                <MaterialUISwitch 
-                  className="mx-auto" 
-                  checked={isSpanish} 
-                  onChange={toggleLanguage} // Cambia el idioma al hacer clic
-                />
+                {!small && (
+                  <MaterialUISwitch 
+                    className="mx-auto" 
+                    checked={isSpanish} 
+                    onChange={toggleLanguage} // Cambia el idioma al hacer clic
+                  />
+                )}
                 <a
                   className="btn btn-success rounded-pill mx-auto"
                   href="#whatsapp">
