@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../assets/styles/ContactUs.css";
 import goupLogo from "../assets/images/go_up_logo.png";
 import emailjs from "@emailjs/browser"; 
+import { useLanguage } from '../languageContext';
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -16,6 +17,7 @@ const ContactUs = () => {
   const [errors, setErrors] = useState({});
   const [formError, setFormError] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
+  const { isSpanish } = useLanguage();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,20 +26,20 @@ const ContactUs = () => {
 
     switch (name) {
       case "name":
-        if (!/^[A-ZÁÉÍÓÚÑ][a-záéíóúñA-Z]*((\s[A-ZÁÉÍÓÚÑ][a-záéíóúñA-Z]*)*)*$/.test(value)) {
-          error = "The name must begin with a capital letter and contain only letters.";
+        if (!/^[A-Za-zÁÉÍÓÚÑáéíóúñ]+( [A-Za-zÁÉÍÓÚÑáéíóúñ]+)*$/.test(value)) {
+          error = isSpanish ? "El nombre debe comenzar con mayúscula y contener solo letras." : "The name must begin with a capital letter and contain only letters.";
         }
         break;
       case "phone":
         if (!/^\d{0,12}$/.test(value)) {
-          error = "The phone can only contain numbers and up to 12 digits.";
+          error = isSpanish ? "El teléfono solo puede contener números y hasta 12 dígitos." : "The phone can only contain numbers and up to 12 digits.";
         }
         break;
       case "age":
         if (!/^(1[0-7]|[1-9])$/.test(value)) {
-            error = "The age must be under 18 years old.";
-          }
-        break
+          error = isSpanish ? "La edad debe ser menor de 18 años." : "The age must be under 18 years old.";
+        }
+        break;
       default:
         break;
     }
@@ -48,67 +50,66 @@ const ContactUs = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     setErrors({});
     setFormError("");
 
     let hasErrors = false;
 
     if (!formData.name) {
-        setErrors((prevErrors) => ({ ...prevErrors, name: "The name is required." }));
-        hasErrors = true;
+      setErrors((prevErrors) => ({ ...prevErrors, name: isSpanish ? "El nombre es obligatorio." : "The name is required." }));
+      hasErrors = true;
     }
     if (!formData.email) {
-        setErrors((prevErrors) => ({ ...prevErrors, email: "Email is mandatory." }));
-        hasErrors = true;
+      setErrors((prevErrors) => ({ ...prevErrors, email: isSpanish ? "El correo electrónico es obligatorio." : "Email is mandatory." }));
+      hasErrors = true;
     }
     if (!formData.phone) {
-        setErrors((prevErrors) => ({ ...prevErrors, phone: "The telephone is mandatory." }));
-        hasErrors = true;
+      setErrors((prevErrors) => ({ ...prevErrors, phone: isSpanish ? "El campo no puede estar vacío." : "The field cannot be empty." }));
+      hasErrors = true;
     }
     if (!formData.age) {
-        setErrors((prevErrors) => ({ ...prevErrors, age: "Age is mandatory." }));
-        hasErrors = true;
+      setErrors((prevErrors) => ({ ...prevErrors, age: isSpanish ? "La edad es obligatoria." : "Age is mandatory." }));
+      hasErrors = true;
     }
 
-    if (!/^[A-ZÁÉÍÓÚÑ][a-záéíóúñA-Z]*((\s[A-ZÁÉÍÓÚÑ][a-záéíóúñA-Z]*)*)*$/.test(formData.name)) {
-        setErrors((prevErrors) => ({ ...prevErrors, name: "The name must begin with a capital letter and contain only letters. It is also mandatory." }));
-        hasErrors = true;
+    if (!/^[A-Za-zÁÉÍÓÚÑáéíóúñ]+( [A-Za-zÁÉÍÓÚÑáéíóúñ]+)*$/.test(formData.name)) {
+      setErrors((prevErrors) => ({ ...prevErrors, name: isSpanish ? "El campo solo permite letras y no puede estar vacío." : "Field only allows letters and cannot be empty." }));
+      hasErrors = true;
     }
     if (!/^\d{0,12}$/.test(formData.phone)) {
-        setErrors((prevErrors) => ({ ...prevErrors, phone: "The phone can only contain numbers and up to 12 digits." }));
-        hasErrors = true;
+      setErrors((prevErrors) => ({ ...prevErrors, phone: isSpanish ? "El teléfono solo puede contener números y hasta 12 dígitos." : "The phone can only contain numbers and up to 12 digits." }));
+      hasErrors = true;
     }
     if (!/^(1[0-7]|[1-9])$/.test(formData.age)) {
-        setErrors((prevErrors) => ({ ...prevErrors, age: "The age must be under 18 years old. It is also mandatory" }));
-        hasErrors = true;
+      setErrors((prevErrors) => ({ ...prevErrors, age: isSpanish ? "La edad debe ser menor de 18 años." : "The age must be under 18 years." }));
+      hasErrors = true;
     }
 
     if (hasErrors) {
-        setFormError("Invalid fields, please check.");
-        return;
+      setFormError(isSpanish ? "Campos inválidos, por favor verifica." : "Invalid fields, please check.");
+      return;
     }
 
     emailjs.send("service_codv2pm", "template_clpwecw", formData, "W_yqO85fndwrvO0wa")
-        .then((response) => {
-            console.log("Email enviado con éxito!", response.status, response.text);
-            setSuccessMessage("Form submitted successfully!");
-            setFormData({
-                name: "",
-                email: "",
-                phone: "",
-                age: "",
-                message: "",
-                service: "",
-            });
-            setErrors({});
-        })
-        .catch((err) => {
-            console.error("Error al enviar el email: ", err);
-            setFormError("Error al enviar el formulario, por favor inténtelo de nuevo.");
-            setSuccessMessage(""); 
+      .then((response) => {
+        console.log("Email enviado con éxito!", response.status, response.text);
+        setSuccessMessage(isSpanish ? "¡Formulario enviado con éxito!" : "Form submitted successfully!");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          age: "",
+          message: "",
+          service: "",
         });
-};
+        setErrors({});
+      })
+      .catch((err) => {
+        console.error("Error al enviar el email: ", err);
+        setFormError(isSpanish ? "Error al enviar el formulario, por favor intenta nuevamente." : "Error submitting the form, please try again.");
+        setSuccessMessage(""); 
+      });
+  };
 
 
   return (
@@ -116,13 +117,21 @@ const ContactUs = () => {
       <div id="contact"></div>
       <div className="contact-box row mt-5">
         <div className="col-lg-6 col-sm-12 px-5 d-flex flex-column justify-content-center align-items-start">
-          <p className="contactus-header">CONTACT US</p>
-          <p className="txt-help">WELCOME</p>
+          <p className="contactus-header">{isSpanish ? "CONTÁCTANOS" : "CONTACT US"}</p>
+          <p className="txt-help">{isSpanish ? "BIENVENIDO" : "WELCOME"}</p>
           <p className="contactus-text">
-            By choosing Go Up, you’re selecting a team dedicated to promoting your child’s well-being and growth through specialized pediatric care and therapies. Reach out today to learn more about our services or schedule a visit—we’re here to answer all your questions and help make life a little easier for you and your family.
+            {isSpanish 
+              ? "Al elegir Go Up, estás seleccionando un equipo dedicado a promover el bienestar y crecimiento de tu hijo a través de cuidados pediátricos especializados y terapias. Contáctanos hoy para saber más sobre nuestros servicios o programar una visita, estamos aquí para responder todas tus preguntas y ayudar a que la vida sea un poco más fácil para ti y tu familia."
+              : "By choosing Go Up, you’re selecting a team dedicated to promoting your child’s well-being and growth through specialized pediatric care and therapies. Reach out today to learn more about our services or schedule a visit—we’re here to answer all your questions and help make life a little easier for you and your family."
+            }
           </p>
-          <p className="txt-help">Get in Touch</p>
-          <p className="contactus-text">Please fill out the form below, and our team will get back to you shortly. Let’s start this journey together!</p>
+          <p className="txt-help">{isSpanish ? "Ponte en contacto" : "Get in Touch"}</p>
+          <p className="contactus-text">
+            {isSpanish 
+              ? "Por favor, completa el formulario a continuación, y nuestro equipo se pondrá en contacto contigo pronto. ¡Comencemos este viaje juntos!"
+              : "Please fill out the form below, and our team will get back to you shortly. Let’s start this journey together!"
+            }
+          </p>
         </div>
         <div className="col-lg-6 col-sm-12 mt-5 p-5">
           <form className="row g-2" onSubmit={handleSubmit}>
@@ -132,7 +141,7 @@ const ContactUs = () => {
                 name="name"
                 id="inputName"
                 className="form-control rounded-pill"
-                placeholder="Name"
+                placeholder={isSpanish ? "Nombre" : "Name"}
                 value={formData.name}
                 onChange={handleChange}
               />
@@ -145,7 +154,7 @@ const ContactUs = () => {
                 name="email"
                 id="inputEmail"
                 className="form-control rounded-pill"
-                placeholder="Email"
+                placeholder={isSpanish ? "Correo electronico" : "Email"}
                 value={formData.email}
                 onChange={handleChange}
               />
@@ -157,7 +166,7 @@ const ContactUs = () => {
                 name="phone"
                 id="inputPhone"
                 className="form-control rounded-pill"
-                placeholder="Phone"
+                placeholder={isSpanish ? "Telefono" : "Phone"}
                 value={formData.phone}
                 onChange={handleChange}
               />
@@ -170,7 +179,7 @@ const ContactUs = () => {
                 name="age"
                 id="selectAge"
                 className="form-control rounded-pill"
-                placeholder="How old is your child?"
+                placeholder={isSpanish ? "¿Cuantos años tiene su niño?":"How old is your child?"}
                 value={formData.age}
                 onChange={handleChange}
               />
@@ -185,18 +194,18 @@ const ContactUs = () => {
                 value={formData.service}
                 onChange={handleChange}
               >
-                <option>Services</option>
-                <option>Therapy Services</option>
-                <option>Rehabilitation Therapy</option>
-                <option>Oxygen Ventilator Therapy</option>
-                <option>Apnea Care</option>
-                <option>Tracheostomy Care</option>
-                <option>Cardiac Monitoring</option>
-                <option>GT/NT Tube Feeding</option>
-                <option>Specialty Clinic Support</option>
-                <option>Follow-Up with Primary Doctor and Specialists</option>
-                <option>Nutrition</option>
-                <option>Free Transportation</option>
+              <option>{isSpanish ? "Servicios" : "Services"}</option>
+                <option>{isSpanish ? "Servicios de Terapia" : "Therapy Services"}</option>
+                <option>{isSpanish ? "Terapia de Rehabilitación" : "Rehabilitation Therapy"}</option>
+                <option>{isSpanish ? "Terapia de Oxígeno y Ventilador" : "Oxygen Ventilator Therapy"}</option>
+                <option>{isSpanish ? "Cuidado de Apnea" : "Apnea Care"}</option>
+                <option>{isSpanish ? "Cuidado de Traqueostomía" : "Tracheostomy Care"}</option>
+                <option>{isSpanish ? "Monitoreo Cardíaco" : "Cardiac Monitoring"}</option>
+                <option>{isSpanish ? "Alimentación por Sonda GT/NT" : "GT/NT Tube Feeding"}</option>
+                <option>{isSpanish ? "Apoyo a Clínicas Especializadas" : "Specialty Clinic Support"}</option>
+                <option>{isSpanish ? "Seguimiento con el Médico Primario y Especialistas" : "Follow-Up with Primary Doctor and Specialists"}</option>
+                <option>{isSpanish ? "Nutrición" : "Nutrition"}</option>
+                <option>{isSpanish ? "Transporte Gratuito" : "Free Transportation"}</option>
               </select>
             </div>
 
@@ -207,7 +216,7 @@ const ContactUs = () => {
                   name="message"
                   className="form-control rounded-pill"
                   id="inputMessage"
-                  placeholder="Message"
+                  placeholder={isSpanish? "Mensaje":"Message"}
                   value={formData.message}
                   onChange={handleChange}
                 />
