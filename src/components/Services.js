@@ -72,7 +72,7 @@ const ServicesWrapper = () => {
           <button
             className="carousel-control-next"
             type="button"
-            data-bs-target="#carouselExampleIndicators"
+            data-bs-target="#carouselExample2"
             data-bs-slide="next">
             <span
               className="carousel-control-next-icon"
