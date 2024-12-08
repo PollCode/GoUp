@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/GoUp/static/css/main.abde8d3e.css",
-    "main.js": "/GoUp/static/js/main.70851d7b.js",
+    "main.js": "/GoUp/static/js/main.007c4b00.js",
     "static/js/453.c6c4cd1f.chunk.js": "/GoUp/static/js/453.c6c4cd1f.chunk.js",
     "static/media/astro-girl3.png": "/GoUp/static/media/astro-girl3.c24448019b2af8f50c93.png",
     "static/media/FondoHeader.png": "/GoUp/static/media/FondoHeader.60928f64d39aa23dc624.png",
@@ -12,11 +12,11 @@
     "static/media/service-icon.svg": "/GoUp/static/media/service-icon.5cfa84dc31fdae8dd762aa84f699c370.svg",
     "static/media/team-icon.svg": "/GoUp/static/media/team-icon.1c8e545cad301a1f00b4e951c9e624a0.svg",
     "main.abde8d3e.css.map": "/GoUp/static/css/main.abde8d3e.css.map",
-    "main.70851d7b.js.map": "/GoUp/static/js/main.70851d7b.js.map",
+    "main.007c4b00.js.map": "/GoUp/static/js/main.007c4b00.js.map",
     "453.c6c4cd1f.chunk.js.map": "/GoUp/static/js/453.c6c4cd1f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.abde8d3e.css",
-    "static/js/main.70851d7b.js"
+    "static/js/main.007c4b00.js"
   ]
 }
