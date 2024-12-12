@@ -11,6 +11,7 @@ import Faq from './components/Faq';
 import TeamWrapper from './components/Team';
 import ContactUs from './components/ContactUs';
 import { LanguageProvider } from './languageContext';
+
 function App() {
   return (
     <LanguageProvider>
