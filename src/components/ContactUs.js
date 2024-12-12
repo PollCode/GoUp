@@ -90,7 +90,7 @@ const ContactUs = () => {
       return;
     }
 
-    emailjs.send("service_codv2pm", "template_clpwecw", formData, "W_yqO85fndwrvO0wa")
+    emailjs.send("service_7ukxmju", "template_o8b5k9n", formData, "5BFa0KhLP9e_D5_KQ")
       .then((response) => {
         console.log("Email enviado con éxito!", response.status, response.text);
         setSuccessMessage(isSpanish ? "¡Formulario enviado con éxito!" : "Form submitted successfully!");
