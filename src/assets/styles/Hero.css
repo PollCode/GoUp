@@ -2,18 +2,38 @@
 .hero-section {
     position: relative;
     height: 100vh;
+    max-height: 100vh;
     overflow: hidden;
-    background-image: url("../images/FondoHeader.png");
+    background-image: url("../images/header.png");
     background-repeat: no-repeat; /* Evita que la imagen se repita */
     background-size: cover; /* Hace que la imagen cubra todo el fondo */
     background-position: center;
     font-family: 'Montserrat','Courier New', Courier, monospace;
 }
 
+@media (max-width: 768px) {
+    .hero-section {
+        background-position: right bottom; /* Mueve la imagen a la parte superior izquierda en móviles */
+    }
+}
+
 .logo {
     position: absolute;
-    width: 159px;
-    height: 103px;
-    left: 46px;
-    top: 63px;
+    width: 280px;
+    height: 180px;
+    top: 100px;
+    left: 650px;
+}
+
+.logo-small {
+    width: 107px;
+    height: 67px;
+    background-color:  #FBEDD3;
+}
+
+.logo-container {
+    background-color:  #FBEDD3;
+    width: 100%;
+    height: 80px;
+    padding: 0;
 }

@@ -1,29 +1,14 @@
-
-
-.logo-small {
-    transform: scale(0.5);
-}
-
-/*.navbar {
-    position: absolute;  Cambiar a absolute 
-    bottom: 0;  Alinear al fondo 
-    width: 100%; /* Hacer que ocupe todo el ancho 
-    transition: background 0.5s;
-    z-index: 2;
-}*/
-
-.bg-nav-unscrolled {
+.nav-unscrolled {
     position: absolute; /* Cambiar a absolute */
     bottom: 0; /* Alinear al fondo */
     width: 100%; /* Hacer que ocupe todo el ancho */
-    
     z-index: 2;
-    height: 189px !important;
+    height: 130px !important;
     transition: background 0.3s;
-    background: linear-gradient(180deg, rgba(84, 84, 144, 0) 5.69%, rgba(55, 55, 111, 0.8) 39.02%) !important;
+    background: linear-gradient(0deg, rgba(246, 215, 158, 0.95) 45.88%, rgba(246, 215, 158, 0) 105.29%) !important;
 }
 
-.bg-nav-scrolled {
+.nav-scrolled {
     /*position: absolute; /* Cambiar a absolute */
     /*bottom: 0; /* Alinear al fondo */
     /*width: 100%; /* Hacer que ocupe todo el ancho */
@@ -33,14 +18,30 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.nav-link {
+.nav-link-normal{
     font-size: 24px !important;
+    font-weight: 700 !important;
     line-height: 29.26px;
-    color: #fff;
+    color: rgba(29, 29, 94, 1);
+}
+
+.nav-link-small {
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    line-height: 29.26px;
+    color: rgba(29, 29, 94, 1);
 }
 
 .nav-link-scrolled {
     font-size: 15px !important;
+    font-weight: 700 !important;
+    line-height: 29.26px;
+    color: #fff;
+}
+
+.nav-link-scrolled-small {
+    font-size: 12px !important;
+    font-weight: 700 !important;
     line-height: 29.26px;
     color: #fff;
 }
@@ -55,6 +56,16 @@
     border: none !important;
 }
 
+.btn-whatsapp-lg {
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    min-width: 150px;
+}
+
+.navbar-logo {
+    width: 50px; /* Ajusta el tamaño según sea necesario */
+}
+
 .navbar-toggler {
     border: none; /* Quita los bordes */
     outline: none;
@@ -67,4 +78,3 @@
 .navbar-toggler-icon {
     color: #F45137 !important; /* Cambia el color a rojo (puedes usar el color que desees) */
 }
-

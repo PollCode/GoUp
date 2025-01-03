@@ -2,7 +2,8 @@
 import './App.css';
 import Hero from './components/Hero';
 //import Relleno from './components/Relleno';
-import Navbar from './components/Navbar'
+//import Navbar from './components/Navbar'
+import NavbarN from './components/Navbar2';
 import WhyUs from './components/WhyUs';
 import WhatWeDo from './components/WhatWeDo';
 import BookVisit from './components/BookVisit';
@@ -16,7 +17,7 @@ function App() {
   return (
     <LanguageProvider>
       <Hero/>
-      <Navbar/>
+      <NavbarN/>
       <WhyUs/>
       <WhatWeDo/>
       <BookVisit/>

@@ -8,12 +8,14 @@
     font-size: 40px !important;
     line-height: 58.51px !important;
     color: #F45137 !important;
+    font-weight: 700 !important;
 }
 
 .txt-help {
     font-size: 24px !important;
     line-height: 29.26px !important;
     color: #7575C1 !important;
+    font-weight: 700 !important;
 }
 
 .contactus-sub {
@@ -60,6 +62,10 @@
 
 .btn-mssg:hover {
     background-color: #F45137;
+}
+
+.footer-small {
+    max-width: 100% !important;
 }
 
 

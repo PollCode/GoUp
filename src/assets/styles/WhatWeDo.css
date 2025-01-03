@@ -1,38 +1,29 @@
-.what-we-do {
-    background-image: url('../images/astro-girl3.png');
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    background-size: cover; /* Hace que la imagen cubra todo el fondo */
-    background-position: left;
-    width: 100%;
-    height: 382px;
-}
-
-.what-we-do-small {
-    background-image: url('../images/astro-girl3.png');
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    background-size: cover; /* Hace que la imagen cubra todo el fondo */
-    background-position: left;
-    width: 100%;
-}
-
-
-
-
 .wwd-box {
     width: 50%;
 }
 
-
-
-
 .wwd-title {
     font-size: 48px;
-    color: #fff;
+    color: rgba(65, 65, 123, 1);
+    font-weight: 900 !important;
 }
 
 .wwd-title-small {
     font-size: 38px;
-    color: #fff;
+    color: rgba(65, 65, 123, 1);
+    font-weight: 900 !important;
+}
+
+.wwd-title-2 {
+    font-size: 30px;
+    color: rgba(65, 65, 123, 1);
+    font-weight: 900 !important;
+}
+
+.wwd-title-small-2 {
+    font-size: 20px;
+    color: rgba(65, 65, 123, 1);
+    font-weight: 900 !important;
 }
 
 .wwd-text {
@@ -53,4 +44,14 @@
 
 .text-box {
     background: linear-gradient(180deg, rgba(84, 84, 144, 0) 5.69%, rgba(55, 55, 111, 0.8) 39.02%) !important;
+}
+
+.img-container {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url("../images/wwdImg.png");
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-size: cover; /* Hace que la imagen cubra todo el fondo */
+    background-position: left;
 }
