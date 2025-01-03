@@ -1,33 +1,36 @@
-import React, { useEffect, useState } from "react";
-import rocket from "../assets/images/rocketShip.png";
+import React, { useEffect } from "react";
+import rocket from "../assets/images/cohete.png";
+import planet from "../assets/images/planeta-morado.png";
 import "../assets/styles/Faq.css";
 import { useLanguage } from "../languageContext"; // Asegúrate de que la ruta sea correcta
+import { useMediaQuery } from "react-responsive";
 
 const Faq = () => {
   const { isSpanish } = useLanguage(); // Obtén isSpanish del contexto
-  const [small, setSmall] = useState(false);
-
-  const handleResize = () => {
-    setSmall(window.innerWidth <= 1000);
-  };
+  const small = useMediaQuery({ query: "(max-width: 768px)" });
 
   useEffect(() => {
-    window.addEventListener("resize", handleResize);
-    window.addEventListener("DOMContentLoaded", handleResize);
+    //window.addEventListener("resize", handleResize);
+    //window.addEventListener("DOMContentLoaded", handleResize);
     return () => {
-      window.removeEventListener("resize", handleResize);
+      //window.removeEventListener("resize", handleResize);
     };
   }, []);
 
   return (
     <div className="faq row">
       {!small && (
-        <div className="col-lg-5 rocketContainer">
+        <div className="col-lg-4 rocketContainer">
+          <img
+            src={planet}
+            className={`planet-purple`}
+            alt="planet"
+            id="planet_purple"
+          />
           <img src={rocket} className="me-auto" alt="Rocket" id="rocketShip" />
         </div>
       )}
-
-      <div className="col-lg-7 faq-box d-flex flex-column p-5">
+      <div className="col-lg-8 faq-box d-flex flex-column p-5">
         <p
           className={`${
             small ? "faq-header-small" : "faq-header"
@@ -206,7 +209,7 @@ const Faq = () => {
           </svg>
         </a>
         <hr className="faq-hr" />
-        <div className="collapse" id="collapseFaq-4">
+        <div className="collapse " id="collapseFaq-4">
           <div className="card card-body card-faq-body">
             {isSpanish
               ? "Estamos aquí para ayudarle en cualquier momento con sus necesidades de atención médica."
@@ -214,6 +217,14 @@ const Faq = () => {
           </div>
           <hr className="faq-hr" />
         </div>
+        {small && (
+          <img
+            src={planet}
+            className={`planet-purple-small`}
+            alt="planet"
+            id="planet_purple"
+          />
+        )}
       </div>
     </div>
   );

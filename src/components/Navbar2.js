@@ -1,13 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useMediaQuery } from "react-responsive";
-import "../assets/styles/Navbar.css";
+import "../assets/styles/NavbarN.css";
 import logo from "../GoUp_logo.svg";
-import servicon from "../assets/icons/service-icon.svg";
-import teamicon from "../assets/icons/team-icon.svg";
-import contacticon from "../assets/icons/contact-icon.svg";
 import { styled } from "@mui/material/styles";
 import Switch from "@mui/material/Switch";
-import { useLanguage } from '../languageContext'; // Importa el contexto
+import { useLanguage } from "../languageContext"; // Importa el contexto
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
@@ -65,9 +62,9 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   },
 }));
 
-const Navbar = () => {
+const NavbarN = () => {
   const [scrolled, setScrolled] = useState(false);
-  const small = useMediaQuery({ query: '(max-width: 768px)' });
+  const small = useMediaQuery({ query: "(max-width: 768px)" });
 
   const { isSpanish, toggleLanguage } = useLanguage(); // Usa el contexto
 
@@ -79,9 +76,13 @@ const Navbar = () => {
     }
   };
 
-  /*const handleResize = () => {
-    setSmall(window.innerWidth <= 1000);
-  };*/
+  const getNavLinkClass = () => {
+    if (!small && !scrolled) return "nav-link-normal";
+    if (!small && scrolled) return "nav-link-scrolled";
+    if (small && scrolled) return "nav-link-scrolled-small";
+    if (small && !scrolled) return "nav-link-small";
+    return "";
+};
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -96,18 +97,18 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`navbar navbar-expand-lg  ${
-          scrolled ? "bg-nav-scrolled fixed-top" : "bg-nav-unscrolled"
+        className={`navbar navbar-expand-lg ${
+          scrolled ? "nav-scrolled fixed-top" : "nav-unscrolled"
         }`}>
-        <div className="container-fluid">
+        <div className={`container-fluid ${scrolled ? "" : "mt-5"}`}>
           <a className="navbar-brand" href="#home">
             {scrolled && <img src={logo} alt="Logo" className="navbar-logo" />}
           </a>
           {small && scrolled && (
             <>
-              <MaterialUISwitch 
-                className="ms-auto" 
-                checked={isSpanish} 
+              <MaterialUISwitch
+                className="ms-auto"
+                checked={isSpanish}
                 onChange={toggleLanguage} // Cambia el idioma al hacer clic
               />
 
@@ -122,7 +123,6 @@ const Navbar = () => {
                 <span className="navbar-toggler-icon"></span>
               </button>
             </>
-            
           )}
 
           <div
@@ -131,63 +131,46 @@ const Navbar = () => {
             } `}
             id="navbarSupportedContent">
             <ul
-              className={`navbar-nav ${
-                small && !scrolled
-                  ? "d-flex flex-row justify-content-center "
-                  : ""
-              } ${scrolled && small ? "ms-auto d-flex flex-column" : ""} ${
-                scrolled && !small ? "mx-auto d-flex flex-row" : ""
-              } ${!scrolled && !small ? "mx-auto d-flex flex-row" : ""}`}>
-              <li className="nav-item">
+              className={`navbar-nav d-flex ${small && scrolled? "flex-column" : "flex-row"} justify-content-center container-fluid `}>
+              <li className={`nav-item p-2 ${small && scrolled ? "mx-auto" : ""}`}>
                 <a
-                  className={`nav-link  ${
-                    scrolled ? "nav-link-scrolled" : ""
-                  } ${
-                    small ? "nav-link-scrolled" : ""
-                  } d-flex flex-column align-items-center`}
+                  className={`nav-link ${getNavLinkClass()}`}
                   href={`${small ? "#service-s" : "#service"}`}>
                   {isSpanish ? "SERVICIOS" : "SERVICES"}
                 </a>
               </li>
-              <li className="nav-item">
+              <li className={`nav-item p-2 ${small && scrolled ? "mx-auto" : ""}`}>
                 <a
-                  className={`nav-link  ${
-                    scrolled ? "nav-link-scrolled" : ""
-                  } ${
-                    small ? "nav-link-scrolled" : ""
-                  }  d-flex flex-column align-items-center`}
+                  className={`nav-link ${getNavLinkClass()}`}
                   href={`${small ? "#team-s" : "#team"}`}>
                   {isSpanish ? "EQUIPO" : "TEAM"}
                 </a>
               </li>
-              <li className="nav-item">
+              <li className={`nav-item p-2 ${small && scrolled ? "mx-auto" : ""}`}>
                 <a
-                  className={`nav-link  ${
-                    scrolled ? "nav-link-scrolled" : ""
-                  } ${
-                    small ? "nav-link-scrolled" : ""
-                  } d-flex flex-column align-items-center`}
+                  className={`nav-link ${getNavLinkClass()}`}
                   href="#contact">
                   {isSpanish ? "CONTACTO" : "CONTACT"}
                 </a>
               </li>
             </ul>
+
             {scrolled && (
-              <div className="d-flex flex-row align-items-center whatsapp-link">
+              <div className="d-flex flex-row align-items-center whatsapp-link ms-auto">
                 {!small && (
-                  <MaterialUISwitch 
-                    className="mx-auto" 
-                    checked={isSpanish} 
+                  <MaterialUISwitch
+                    className="mx-auto"
+                    checked={isSpanish}
                     onChange={toggleLanguage} // Cambia el idioma al hacer clic
                   />
                 )}
                 <a
-                  className="btn btn-success rounded-pill mx-auto"
+                  className={`btn btn-success mx-auto rounded-pill d-flex flex-row ${!small? "btn-whatsapp-lg" : ""}`}
                   href="#whatsapp">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="25px"
-                    height="25px"
+                    width="15px"
+                    height="15px"
                     fill="currentColor"
                     className="bi bi-whatsapp me-2"
                     viewBox="0 0 16 16">
@@ -204,5 +187,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
-
+export default NavbarN;

@@ -30,10 +30,10 @@
 
 .second-img {
     position: absolute !important; /* Posiciona la estampilla de forma absoluta */
-    top: 0 !important; /* Alinea al borde superior */
-    right: 0 !important; /* Alinea al borde derecho */
-    width: 291px !important; /* Ajusta el tamaño de la estampilla */
-    height: 182px !important; /* Mantiene la proporción */
+    top: -8% !important; /* Alinea al borde superior */
+    right: -8% !important; /* Alinea al borde derecho */
+    width: 170px !important; /* Ajusta el tamaño de la estampilla */
+    height: 170px !important; /* Mantiene la proporción */
 }
 
 .second-img-small {
@@ -44,6 +44,23 @@
     height: 87px !important; /* Mantiene la proporción */
 }
 
+.niña-img {
+    position: absolute !important; /* Posiciona la estampilla de forma absoluta */
+    left: -225%;
+    bottom: -100%  !important; /* Alinea al borde superior */
+    width: 534px !important; /* Ajusta el tamaño de la estampilla */
+    height: 634px !important; /* Mantiene la proporción */
+    z-index: 1;
+}
+
+.niña-img-small {
+    position: absolute !important; /* Posiciona la estampilla de forma absoluta */
+    left: 0%;
+    bottom: -40%  !important; /* Alinea al borde superior */
+    width: 150px !important; /* Ajusta el tamaño de la estampilla */
+    height: 180px !important; /* Mantiene la proporción */
+    z-index: 1;
+}
 
 
 .btn-call-us {
@@ -64,6 +81,24 @@
     border: none;
 }
 
+.btn-call-us-small {
+    background-color: #57C086;
+    color: #000;
+    width: 136px;
+    height: 55px;  
+    font-size: 12px;
+    border: none;
+}
+
+.btn-email-us-small {
+    background-color: #7575C1;
+    color: #fff;
+    width: 136px;
+    height: 55px;  
+    font-size: 12px;
+    border: none;
+}
+
 .book-text {
     font-size: 48px;
     color: #F45137;
@@ -74,4 +109,13 @@
     font-size: 30px;
     color: #F45137;
     line-height: 58.51px;
+}
+
+.book-visit {
+    background: rgba(217, 217, 217, 1);
+}
+
+.botonera {
+    position: relative; /* Permite posicionar elementos hijos de forma absoluta */
+    display: inline-block;
 }

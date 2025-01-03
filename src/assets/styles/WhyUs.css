@@ -1,17 +1,13 @@
-#redStar {
-    width: 97px;
-    height: 101px;
-}
-
-#spaceShip {
-    width: 262px;
-    height: 132px
-}
 
 .why-us-header p{
     font-size: 48px !important;
     line-height: 58.51px !important;
     color: #F45137 !important;
+}
+
+.card {
+    background: none !important;
+    border: none !important;
 }
 
 .card-title {
@@ -20,8 +16,21 @@
     margin-bottom: 10px;
     text-align: center;
 }
-  
+
 .card p {
     font-size: 1rem;
     text-align: center;
+}
+
+.carousel-indicators button {
+    background-color: rgba(244, 80, 55, 0.507) !important; /* Color de los puntos inactivos */
+    border-radius: 50%; /* Hace que los botones sean circulares */
+    width: 8px !important; /* Ancho del punto */
+    height: 8px !important; /* Alto del punto */
+    opacity: 0.5; /* Opacidad de los puntos inactivos */
+}
+
+.carousel-indicators .active {
+    background-color: rgb(245, 62, 34); /* Color de los puntos activos */
+    opacity: 1; /* Opacidad del punto activo */
 }

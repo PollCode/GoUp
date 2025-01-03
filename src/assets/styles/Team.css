@@ -25,11 +25,13 @@
 .team-header {
     font-size: 48px;
     line-height: 58.51px;
-    color: #000;
+    font-weight: 900 !important;
+    color: rgba(65, 65, 123, 1);
 }
 
 .team-header-small {
     font-size: 30px;
     line-height: 58.51px;
-    color: #000;
+    font-weight: 900 !important;
+    color: rgba(65, 65, 123, 1);
 }

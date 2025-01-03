@@ -32,33 +32,19 @@
 .services-header {
     font-size: 48px;
     line-height: 58.51px;
-    color: #000;
+    color: rgba(65, 65, 123, 1);
+    font-weight: 900 !important;
 }
 
 .services-header-small {
-    font-size: 30px;
+    font-size: 40px;
     line-height: 58.51px;
-    color: #000;
+    color: rgba(65, 65, 123, 1);
+    font-weight: 900 !important;
 }
 
 .btn-collapse {
     color: #000;
     font-size: 20px;
     text-decoration: none;
-}
-
-#planetRed {
-    width: 242.72px;
-    height: 176.64px;
-    position: absolute !important;
-    bottom: -100px !important;
-    left: 163px !important;
-}
-
-#planetRed-small {
-    width: 115px;
-    height: 90px;
-    position: absolute !important;
-    top: -50px !important;
-    left: 103px !important;
 }
