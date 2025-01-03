@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import planet from "../assets/images/planeta 1.png";
 import niña from "../assets/images/niña 1.png";
 import rectangle from "../assets/images/RectangleBlack.png";
@@ -56,6 +56,7 @@ const BookVisit = () => {
             <img
               src={niña}
               className={`${small ? "niña-img-small" : "niña-img"}`}
+              alt="niña"
             />
           </div>
         </div>
