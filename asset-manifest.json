@@ -1,22 +1,24 @@
 {
   "files": {
-    "main.css": "/GoUp/static/css/main.abde8d3e.css",
-    "main.js": "/GoUp/static/js/main.007c4b00.js",
+    "main.css": "/GoUp/static/css/main.64d49eb0.css",
+    "main.js": "/GoUp/static/js/main.8846f3c5.js",
     "static/js/453.c6c4cd1f.chunk.js": "/GoUp/static/js/453.c6c4cd1f.chunk.js",
-    "static/media/astro-girl3.png": "/GoUp/static/media/astro-girl3.c24448019b2af8f50c93.png",
-    "static/media/FondoHeader.png": "/GoUp/static/media/FondoHeader.60928f64d39aa23dc624.png",
-    "static/media/rocketShip.png": "/GoUp/static/media/rocketShip.987f4944c182724d7fe0.png",
+    "static/media/header.png": "/GoUp/static/media/header.3fcf70e04fcdd7fbf484.png",
+    "static/media/wwdImg.png": "/GoUp/static/media/wwdImg.1cd19697cc0e7a544323.png",
+    "static/media/cohete.png": "/GoUp/static/media/cohete.9818132871c4117f86c7.png",
+    "static/media/planeta-morado.png": "/GoUp/static/media/planeta-morado.dcf0bd3ff8fc4bacd726.png",
+    "static/media/footer.png": "/GoUp/static/media/footer.a5975b722277648b2b93.png",
+    "static/media/niña 1.png": "/GoUp/static/media/niña 1.6622bc64089129e85dd9.png",
+    "static/media/planeta 1.png": "/GoUp/static/media/planeta 1.c3269af6e38d2c62ed47.png",
+    "static/media/GoUpLogo.png": "/GoUp/static/media/GoUpLogo.2c24e320a5544c89a999.png",
     "static/media/GoUp_logo.svg": "/GoUp/static/media/GoUp_logo.2f9f40e55f10d6e5dbedeb1aae19f99c.svg",
     "index.html": "/GoUp/index.html",
-    "static/media/contact-icon.svg": "/GoUp/static/media/contact-icon.ac42372aebcb728b662a6d5d6f07fded.svg",
-    "static/media/service-icon.svg": "/GoUp/static/media/service-icon.5cfa84dc31fdae8dd762aa84f699c370.svg",
-    "static/media/team-icon.svg": "/GoUp/static/media/team-icon.1c8e545cad301a1f00b4e951c9e624a0.svg",
-    "main.abde8d3e.css.map": "/GoUp/static/css/main.abde8d3e.css.map",
-    "main.007c4b00.js.map": "/GoUp/static/js/main.007c4b00.js.map",
+    "main.64d49eb0.css.map": "/GoUp/static/css/main.64d49eb0.css.map",
+    "main.8846f3c5.js.map": "/GoUp/static/js/main.8846f3c5.js.map",
     "453.c6c4cd1f.chunk.js.map": "/GoUp/static/js/453.c6c4cd1f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.abde8d3e.css",
-    "static/js/main.007c4b00.js"
+    "static/css/main.64d49eb0.css",
+    "static/js/main.8846f3c5.js"
   ]
 }
