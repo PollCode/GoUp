@@ -166,7 +166,9 @@ const NavbarN = () => {
                 )}
                 <a
                   className={`btn btn-success mx-auto rounded-pill d-flex flex-row ${!small? "btn-whatsapp-lg" : ""}`}
-                  href="#whatsapp">
+                  href="https://wa.me/5358414059"
+                  target="_blank"
+                  rel="noopener noreferrer">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="15px"
