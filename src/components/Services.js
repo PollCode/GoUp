@@ -42,7 +42,7 @@ const ServicesWrapper = () => {
       {small ? (
         <>
           <div id="service-s"></div>
-          <div id="carouselExample2" class="carousel slide services-small">
+          <div id="carouselExample2" className="carousel slide services-small">
             <p className="text-center services-header-small my-5">
               OUR SERVICES
             </p>
@@ -121,7 +121,7 @@ const ServicesWrapper = () => {
                   viewBox="0 0 44 35"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg">
-                  <g clip-path="url(#clip0_27_77)">
+                  <g clipPath="url(#clip0_27_77)">
                     <path
                       d="M0 2.07004L44 0L21.8122 35L0 2.07004Z"
                       fill="#F45137"

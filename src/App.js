@@ -1,7 +1,5 @@
-//import logo from './logo.svg';
 import './App.css';
 import Hero from './components/Hero';
-//import Relleno from './components/Relleno';
 //import Navbar from './components/Navbar'
 import NavbarN from './components/Navbar2';
 import WhyUs from './components/WhyUs';

@@ -38,7 +38,7 @@ const TeamWrapper = () => {
       {small ? (
         <>
         <div id="team-s"></div>
-        <div id="carouselExample3" class="carousel slide teamWrapper-small">
+        <div id="carouselExample3" className="carousel slide teamWrapper-small">
           <p className="text-center team-header-small my-5">TEAM</p>
           <div className="carousel-inner">
             <div className="carousel-item active p-2">
@@ -121,7 +121,7 @@ const TeamWrapper = () => {
                   viewBox="0 0 44 35"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg">
-                  <g clip-path="url(#clip0_27_177)">
+                  <g clipPath="url(#clip0_27_177)">
                     <path
                       d="M0 2.07004L44 0L21.8122 35L0 2.07004Z"
                       fill="#7575C1"
