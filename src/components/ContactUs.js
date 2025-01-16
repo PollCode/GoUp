@@ -37,25 +37,32 @@ const ContactUs = () => {
         }
         break;
       case "phone":
-        if (!/^\d{0,12}$/.test(value)) {
+        if (!/^\d{10}$/.test(value)) {
           error = isSpanish
-            ? "El teléfono solo puede contener números y hasta 12 dígitos."
-            : "The phone can only contain numbers and up to 12 digits.";
+            ? "El teléfono solo puede contener números y hasta 10 dígitos."
+            : "The phone can only contain numbers and up to 10 digits.";
         }
         break;
       case "age":
         if (!/^(1[0-7]|[1-9])$/.test(value)) {
           error = isSpanish
-            ? "La edad debe ser menor de 18 años."
-            : "The age must be under 18 years old.";
+            ? "La edad debe ser menor de 21 años."
+            : "The age must be under 21 years old.";
         }
         break;
       default:
         break;
     }
 
-    setErrors({ ...errors, [name]: error });
+    // Establecer el error y configurar el temporizador para eliminarlo
+    setErrors((prevErrors) => ({ ...prevErrors, [name]: error }));
     setFormData({ ...formData, [name]: value });
+
+    if (error) {
+      setTimeout(() => {
+        setErrors((prevErrors) => ({ ...prevErrors, [name]: "" }));
+      }, 10000); // 10 segundos
+    }
   };
 
   const handleSubmit = (e) => {
@@ -66,74 +73,87 @@ const ContactUs = () => {
     let hasErrors = false;
 
     if (!formData.name) {
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        name: isSpanish ? "El nombre es obligatorio." : "The name is required.",
-      }));
+      const errorMessage = isSpanish ? "El nombre es obligatorio." : "The name is required.";
+      setErrors((prevErrors) => ({ ...prevErrors, name: errorMessage }));
       hasErrors = true;
+
+      setTimeout(() => {
+        setErrors((prevErrors) => ({ ...prevErrors, name: "" }));
+      }, 10000); // 10 segundos
     }
     if (!formData.email) {
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        email: isSpanish
-          ? "El correo electrónico es obligatorio."
-          : "Email is mandatory.",
-      }));
+      const errorMessage = isSpanish ? "El correo electrónico es obligatorio." : "Email is mandatory.";
+      setErrors((prevErrors) => ({ ...prevErrors, email: errorMessage }));
       hasErrors = true;
+
+      setTimeout(() => {
+        setErrors((prevErrors) => ({ ...prevErrors, email: "" }));
+      }, 10000); // 10 segundos
     }
     if (!formData.phone) {
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        phone: isSpanish
-          ? "El campo no puede estar vacío."
-          : "The field cannot be empty.",
-      }));
+      const errorMessage = isSpanish ? "El campo no puede estar vacío." : "The field cannot be empty.";
+      setErrors((prevErrors) => ({ ...prevErrors, phone: errorMessage }));
       hasErrors = true;
+
+      setTimeout(() => {
+        setErrors((prevErrors) => ({ ...prevErrors, phone: "" }));
+      }, 10000); // 10 segundos
     }
     if (!formData.age) {
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        age: isSpanish ? "La edad es obligatoria." : "Age is mandatory.",
-      }));
+      const errorMessage = isSpanish ? "La edad es obligatoria." : "Age is mandatory.";
+      setErrors((prevErrors) => ({ ...prevErrors, age: errorMessage }));
       hasErrors = true;
+
+      setTimeout(() => {
+        setErrors((prevErrors) => ({ ...prevErrors, age: "" }));
+      }, 10000); // 10 segundos
     }
 
     if (
       !/^[A-Za-zÁÉÍÓÚÑáéíóúñ]+( [A-Za-zÁÉÍÓÚÑáéíóúñ]+)*$/.test(formData.name)
     ) {
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        name: isSpanish
-          ? "El campo solo permite letras y no puede estar vacío."
-          : "Field only allows letters and cannot be empty.",
-      }));
+      const errorMessage = isSpanish
+        ? "El campo solo permite letras y no puede estar vacío."
+        : "Field only allows letters and cannot be empty.";
+      setErrors((prevErrors) => ({ ...prevErrors, name: errorMessage }));
       hasErrors = true;
+
+      setTimeout(() => {
+        setErrors((prevErrors) => ({ ...prevErrors, name: "" }));
+      }, 10000); // 10 segundos
     }
-    if (!/^\d{0,12}$/.test(formData.phone)) {
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        phone: isSpanish
-          ? "El teléfono solo puede contener números y hasta 12 dígitos."
-          : "The phone can only contain numbers and up to 12 digits.",
-      }));
+    if (!/^\d{10}$/.test(formData.phone)) {
+      const errorMessage = isSpanish
+        ? "El teléfono solo puede contener números y hasta 10 dígitos."
+        : "The phone can only contain numbers and up to 10 digits.";
+      setErrors((prevErrors) => ({ ...prevErrors, phone: errorMessage }));
       hasErrors = true;
+
+      setTimeout(() => {
+        setErrors((prevErrors) => ({ ...prevErrors, phone: "" }));
+      }, 10000); // 10 segundos
     }
     if (!/^(1[0-7]|[1-9])$/.test(formData.age)) {
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        age: isSpanish
-          ? "La edad debe ser menor de 18 años."
-          : "The age must be under 18 years.",
-      }));
+      const errorMessage = isSpanish
+        ? "La edad de niños/niñas debe ser menor de 21 años."
+        : "Children's age must be under 21 years old.";
+      setErrors((prevErrors) => ({ ...prevErrors, age: errorMessage }));
       hasErrors = true;
+
+      setTimeout(() => {
+        setErrors((prevErrors) => ({ ...prevErrors, age: "" }));
+      }, 10000); // 10 segundos
     }
 
     if (hasErrors) {
       setFormError(
-        isSpanish
-          ? "Campos inválidos, por favor verifica."
-          : "Invalid fields, please check."
+        isSpanish ? "Campos inválidos, por favor verifica." : "Invalid fields, please check."
       );
+
+      setTimeout(() => {
+        setFormError("");
+      }, 10000); // 10 segundos
+      
       return;
     }
 
@@ -147,9 +167,7 @@ const ContactUs = () => {
       .then((response) => {
         console.log("Email enviado con éxito!", response.status, response.text);
         setSuccessMessage(
-          isSpanish
-            ? "¡Formulario enviado con éxito!"
-            : "Form submitted successfully!"
+          isSpanish ? "¡Formulario enviado con éxito!" : "Form submitted successfully!"
         );
         setFormData({
           name: "",
@@ -164,9 +182,7 @@ const ContactUs = () => {
       .catch((err) => {
         console.error("Error al enviar el email: ", err);
         setFormError(
-          isSpanish
-            ? "Error al enviar el formulario, por favor intenta nuevamente."
-            : "Error submitting the form, please try again."
+          isSpanish ? "Error al enviar el formulario, por favor intenta nuevamente." : "Error submitting the form, please try again."
         );
         setSuccessMessage("");
       });
