@@ -183,7 +183,9 @@ const Navbar = () => {
                 )}
                 <a
                   className="btn btn-success rounded-pill mx-auto"
-                  href="#whatsapp">
+                  href="https://wa.me/5358414059"
+                  target="_blank"
+                  rel="noopener noreferrer">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="25px"
