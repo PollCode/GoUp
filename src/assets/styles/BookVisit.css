@@ -1,66 +1,61 @@
-.row{
+
+.book-visit {
     max-width: 100%;
+    margin: 0;
+    padding-left: 0%;
+    background: rgba(217, 217, 217, 1);
+}
+
+.book-visit-sm {
+    padding-bottom: 120px;
+    max-width: 100%;
+    margin: 0;
+    padding-left: 0%;
+    background: rgba(217, 217, 217, 1);
 }
 
 .portrait {
-    width: 790px;
-    height: 391px;
-    position: relative; /* Permite posicionar elementos hijos de forma absoluta */
-    display: inline-block;
-}
-
-.portrait-small {
-    width: 100% !important;
-    position: relative; /* Permite posicionar elementos hijos de forma absoluta */
-    display: inline-block;
-}
-
-.main-img {
-    width: 90%; /* Ajusta el tamaño según sea necesario */
-    height: auto;
-    margin-top: 50px;
-    margin-left: 50px;
-}
-
-.main-img-small {
-    width: 100% !important; /* Ajusta el tamaño según sea necesario */
-    height: auto;
+    width: 80%;
+    height: 300px;
+    margin-top: 8%;
+    margin-left: 8%;
+    background-color: #000;
+    position: relative;
     
 }
 
-.second-img {
-    position: absolute !important; /* Posiciona la estampilla de forma absoluta */
-    top: -8% !important; /* Alinea al borde superior */
-    right: -8% !important; /* Alinea al borde derecho */
-    width: 170px !important; /* Ajusta el tamaño de la estampilla */
-    height: 170px !important; /* Mantiene la proporción */
+.portrait-small {
+    height: 300px;
+    width: 100%;
+    background-color: #000;
 }
 
-.second-img-small {
-    position: absolute !important; /* Posiciona la estampilla de forma absoluta */
-    left: 25%;
-    top: 80%  !important; /* Alinea al borde superior */
-    width: 146px !important; /* Ajusta el tamaño de la estampilla */
-    height: 87px !important; /* Mantiene la proporción */
+.botonera {
+    position: relative;
 }
 
-.niña-img {
-    position: absolute !important; /* Posiciona la estampilla de forma absoluta */
-    left: -225%;
-    bottom: -100%  !important; /* Alinea al borde superior */
-    width: 534px !important; /* Ajusta el tamaño de la estampilla */
-    height: 634px !important; /* Mantiene la proporción */
+.planet {
+    position: absolute;
+    right: -75px;
+    top: -75px;
+}
+
+.niña {
+    width: 50%;
+    position: absolute;
+    left: -100px;
+    bottom: -175px;
     z-index: 1;
 }
 
-.niña-img-small {
-    position: absolute !important; /* Posiciona la estampilla de forma absoluta */
-    left: 0%;
-    bottom: -40%  !important; /* Alinea al borde superior */
-    width: 150px !important; /* Ajusta el tamaño de la estampilla */
-    height: 180px !important; /* Mantiene la proporción */
+.niña-sm {
+    width: 70%;
+    position: absolute;
+    left: -20px;
+    bottom: -220px;
     z-index: 1;
 }
+
 
 
 .btn-call-us {
@@ -84,7 +79,7 @@
 .btn-call-us-small {
     background-color: #57C086;
     color: #000;
-    width: 136px;
+    width: 236px;
     height: 55px;  
     font-size: 12px;
     border: none;
@@ -93,7 +88,7 @@
 .btn-email-us-small {
     background-color: #7575C1;
     color: #fff;
-    width: 136px;
+    width: 236px;
     height: 55px;  
     font-size: 12px;
     border: none;
@@ -111,11 +106,6 @@
     line-height: 58.51px;
 }
 
-.book-visit {
-    background: rgba(217, 217, 217, 1);
-}
 
-.botonera {
-    position: relative; /* Permite posicionar elementos hijos de forma absoluta */
-    display: inline-block;
-}
+
+

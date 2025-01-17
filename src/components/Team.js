@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import circle from "../assets/images/circle.png";
 import "../assets/styles/Team.css";
+import { useMediaQuery } from "react-responsive";
 
 const TeamCard = (props) => {
   return (
-    <div className="card card-team d-flex flex-column align-items-center" style={{ width: props.small ? "100%" : "18rem" }}>
+    <div
+      className="card card-team d-flex flex-column align-items-center"
+      style={{ width: props.small ? "100%" : "18rem" }}>
       <img src={circle} className="card-img-top team-photo " alt="Circle"></img>
       <div className="card-body">
         <p className="card-text text-center">
@@ -17,61 +20,50 @@ const TeamCard = (props) => {
 };
 
 const TeamWrapper = () => {
-  const [small, setSmall] = useState(false);
-
-  const handleResize = () => {
-    setSmall(window.innerWidth <= 1000);
-    console.log(window.innerWidth);
-    //console.log(small);
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
-    window.addEventListener("DOMContentLoaded", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  const small = useMediaQuery({ query: "(max-width: 768px)" });
+  const [rotated, setRotated] = useState(false);
 
   return (
     <>
       {small ? (
         <>
-        <div id="team-s"></div>
-        <div id="carouselExample3" className="carousel slide teamWrapper-small">
-          <p className="text-center team-header-small my-5">TEAM</p>
-          <div className="carousel-inner">
-            <div className="carousel-item active p-2">
-              <TeamCard small="small"/>
+          <div id="team-s"></div>
+          <div
+            id="carouselExample3"
+            className="carousel slide teamWrapper-small">
+            <p className="text-center team-header-small my-5">TEAM</p>
+            <div className="carousel-inner">
+              <div className="carousel-item active p-2">
+                <TeamCard small="small" />
+              </div>
+              <div className="carousel-item p-2">
+                <TeamCard small="small" />
+              </div>
+              <div className="carousel-item p-2">
+                <TeamCard small="small" />
+              </div>
             </div>
-            <div className="carousel-item p-2">
-              <TeamCard small="small"/>
-            </div>
-            <div className="carousel-item p-2">
-              <TeamCard small="small"/>
-            </div>
+            <button
+              className="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExample3"
+              data-bs-slide="prev">
+              <span
+                className="carousel-control-prev-icon"
+                aria-hidden="true"></span>
+              <span className="visually-hidden">Previous</span>
+            </button>
+            <button
+              className="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExample3"
+              data-bs-slide="next">
+              <span
+                className="carousel-control-next-icon"
+                aria-hidden="true"></span>
+              <span className="visually-hidden">Next</span>
+            </button>
           </div>
-          <button
-            className="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselExample3"
-            data-bs-slide="prev">
-            <span
-              className="carousel-control-prev-icon"
-              aria-hidden="true"></span>
-            <span className="visually-hidden">Previous</span>
-          </button>
-          <button
-            className="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselExample3"
-            data-bs-slide="next">
-            <span
-              className="carousel-control-next-icon"
-              aria-hidden="true"></span>
-            <span className="visually-hidden">Next</span>
-          </button>
-        </div>
         </>
       ) : (
         <>
@@ -113,14 +105,18 @@ const TeamWrapper = () => {
                 href="#collapseTeam"
                 role="button"
                 aria-expanded="false"
-                aria-controls="collapseTeam">
+                aria-controls="collapseTeam"
+                onClick={() => setRotated(!rotated)}>
                 VIEW ALL
                 <svg
                   width="44"
                   height="35"
                   viewBox="0 0 44 35"
                   fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
+                  xmlns="http://www.w3.org/2000/svg"
+                  className={`transition-transform duration-300 ${
+                    rotated ? "rotate-180" : ""
+                  }`}>
                   <g clipPath="url(#clip0_27_177)">
                     <path
                       d="M0 2.07004L44 0L21.8122 35L0 2.07004Z"

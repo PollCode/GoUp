@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useMediaQuery } from "react-responsive";
-import img from "../assets/images/wwdImg.png";
+//import img from "../assets/images/wwdImg.png";
 import "../assets/styles/WhatWeDo.css";
 import { useLanguage } from "../languageContext"; // Importa el contexto
 
@@ -8,17 +8,13 @@ const WhatWeDo = () => {
   const small = useMediaQuery({ query: "(max-width: 768px)" });
   const { isSpanish } = useLanguage(); // Usa el contexto para obtener el idioma
 
-  useEffect(() => {
-    //window.addEventListener("resize", handleResize);
-    return () => {
-      //window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
   return (
     <>
       <div className="row">
-        <div className="col-lg-6 col-md-6 col-sm-12 img-container"></div>
+        <div
+          className={`col-lg-6 col-md-6 col-sm-12 ${
+            small ? "img-container-small" : "img-container"
+          }`}></div>
         <div className="col-lg-6 col-md-6 col-sm-12 p-4">
           <div className="title-box">
             <p

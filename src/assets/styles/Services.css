@@ -48,3 +48,11 @@
     font-size: 20px;
     text-decoration: none;
 }
+
+.rotate-180 {
+    transform: rotate(180deg); /* Rota 180 grados */
+}
+
+.transition-transform {
+    transition: transform 0.5s ease; /* Transición suave */
+}

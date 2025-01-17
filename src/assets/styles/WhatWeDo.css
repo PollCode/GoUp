@@ -46,7 +46,21 @@
     background: linear-gradient(180deg, rgba(84, 84, 144, 0) 5.69%, rgba(55, 55, 111, 0.8) 39.02%) !important;
 }
 
+
+.row {
+    max-width: 100%;
+}
+
 .img-container {
+    position: relative;
+    overflow: hidden;
+    background-image: url("../images/wwdImg.png");
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-size: cover; /* Hace que la imagen cubra todo el fondo */
+    background-position: left;
+}
+
+.img-container-small {
     position: relative;
     height: 100vh;
     overflow: hidden;

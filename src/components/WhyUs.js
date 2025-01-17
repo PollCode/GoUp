@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useMediaQuery } from "react-responsive";
 import redStar from "../assets/images/redStar.png";
 import "../assets/styles/WhyUs.css";
@@ -17,15 +17,6 @@ const WhyUsCard = (props) => {
 const WhyUs = () => {
   const small = useMediaQuery({ query: "(max-width: 768px)" });
   const { isSpanish } = useLanguage(); // Usa el contexto para obtener el idioma
-
-
-  useEffect(() => {
-    //window.addEventListener("resize", handleResize);
-    //window.addEventListener("DOMContentLoaded", handleResize);
-    return () => {
-      //window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   const cardContent = [
     {

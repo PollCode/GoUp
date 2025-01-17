@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import rectangle from "../assets/images/rectangle.png";
 import "../assets/styles/Services.css";
 import estrella_azul from "../assets/images/estrella_azul.png";
@@ -29,13 +29,11 @@ const Service = (props) => {
 const ServicesWrapper = () => {
   const small = useMediaQuery({ query: "(max-width: 768px)" });
 
-  useEffect(() => {
-    //window.addEventListener("resize", handleResize);
-    //window.addEventListener("DOMContentLoaded", handleResize);
-    return () => {
-      //window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  const [isRotated, setIsRotated] = useState(false);
+
+  const handleClick = () => {
+    setIsRotated(!isRotated); // Alterna el estado de rotación
+  };
 
   return (
     <>
@@ -113,14 +111,19 @@ const ServicesWrapper = () => {
                 href="#collapseExample"
                 role="button"
                 aria-expanded="false"
-                aria-controls="collapseExample">
+                aria-controls="collapseExample"
+                onClick={handleClick} // Maneja el clic
+              >
                 VIEW ALL
                 <svg
                   width="44"
                   height="35"
                   viewBox="0 0 44 35"
                   fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
+                  xmlns="http://www.w3.org/2000/svg"
+                  className={`transition-transform duration-300 ${
+                    isRotated ? "rotate-180" : ""
+                  }`}>
                   <g clipPath="url(#clip0_27_77)">
                     <path
                       d="M0 2.07004L44 0L21.8122 35L0 2.07004Z"

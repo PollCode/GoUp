@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import rocket from "../assets/images/cohete.png";
 import planet from "../assets/images/planeta-morado.png";
 import "../assets/styles/Faq.css";
@@ -9,13 +9,10 @@ const Faq = () => {
   const { isSpanish } = useLanguage(); // Obtén isSpanish del contexto
   const small = useMediaQuery({ query: "(max-width: 768px)" });
 
-  useEffect(() => {
-    //window.addEventListener("resize", handleResize);
-    //window.addEventListener("DOMContentLoaded", handleResize);
-    return () => {
-      //window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  const [rotated1, setRotated1] = useState(false);
+  const [rotated2, setRotated2] = useState(false);
+  const [rotated3, setRotated3] = useState(false);
+  const [rotated4, setRotated4] = useState(false);
 
   return (
     <div className="faq row">
@@ -48,7 +45,8 @@ const Faq = () => {
           href="#collapseFaq-1"
           role="button"
           aria-expanded="false"
-          aria-controls="collapseFaq-1">
+          aria-controls="collapseFaq-1"
+          onClick={() => setRotated1(!rotated1)}>
           {isSpanish ? "¿Qué es un PPEC?" : "What is a PPEC?"}
           <svg
             width="20"
@@ -56,7 +54,10 @@ const Faq = () => {
             viewBox="0 0 23 23"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            style={{ flexShrink: 0 }}>
+            style={{ flexShrink: 0 }}
+            className={`transition-transform duration-300 ${
+              rotated1 ? "rotate-180" : ""
+            }`}>
             <g clipPath="url(#clip0_27_83)">
               <path
                 d="M0.386719 1.00545L22.3867 0L11.2928 17L0.386719 1.00545Z"
@@ -91,7 +92,8 @@ const Faq = () => {
           href="#collapseFaq-2"
           role="button"
           aria-expanded="false"
-          aria-controls="collapseFaq-2">
+          aria-controls="collapseFaq-2"
+          onClick={() => setRotated2(!rotated2)}>
           {isSpanish
             ? "¿Quién califica para el programa PPEC?"
             : "Who Qualifies For The PPEC Program?"}
@@ -101,7 +103,10 @@ const Faq = () => {
             viewBox="0 0 23 23"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            style={{ flexShrink: 0 }}>
+            style={{ flexShrink: 0 }}
+            className={`transition-transform duration-300 ${
+              rotated2 ? "rotate-180" : ""
+            }`}>
             <g clipPath="url(#clip0_27_83)">
               <path
                 d="M0.386719 1.00545L22.3867 0L11.2928 17L0.386719 1.00545Z"
@@ -136,7 +141,8 @@ const Faq = () => {
           href="#collapseFaq-3"
           role="button"
           aria-expanded="false"
-          aria-controls="collapseFaq-3">
+          aria-controls="collapseFaq-3"
+          onClick={() => setRotated3(!rotated3)}>
           {isSpanish ? "¿Cuánto cuesta?" : "How much does it cost?"}
           <svg
             width="20"
@@ -144,7 +150,10 @@ const Faq = () => {
             viewBox="0 0 23 23"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            style={{ flexShrink: 0 }}>
+            style={{ flexShrink: 0 }}
+            className={`transition-transform duration-300 ${
+              rotated3 ? "rotate-180" : ""
+            }`}>
             <g clipPath="url(#clip0_27_83)">
               <path
                 d="M0.386719 1.00545L22.3867 0L11.2928 17L0.386719 1.00545Z"
@@ -179,7 +188,8 @@ const Faq = () => {
           href="#collapseFaq-4"
           role="button"
           aria-expanded="false"
-          aria-controls="collapseFaq-4">
+          aria-controls="collapseFaq-4"
+          onClick={() => setRotated4(!rotated4)}>
           {isSpanish
             ? "¡Estamos aquí para usted, 12 horas al día, 7 días a la semana!"
             : "We're here for you, 12 hours a day, 7 days a week!"}
@@ -189,7 +199,10 @@ const Faq = () => {
             viewBox="0 0 23 23"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            style={{ flexShrink: 0 }}>
+            style={{ flexShrink: 0 }}
+            className={`transition-transform duration-300 ${
+              rotated4 ? "rotate-180" : ""
+            }`}>
             <g clipPath="url(#clip0_27_83)">
               <path
                 d="M0.386719 1.00545L22.3867 0L11.2928 17L0.386719 1.00545Z"

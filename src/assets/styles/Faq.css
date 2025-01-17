@@ -33,12 +33,10 @@
 
 .faq-box {
     position: relative; 
-    display: inline-block;
 }
 
 .rocketContainer{
     position: relative; 
-    display: inline-block;
     max-height: 100%;
 }
 
@@ -46,8 +44,8 @@
     width: 500px;
     height: 500px;
     position: absolute !important;
-    bottom: -40% !important;
-    left: -15% !important;
+    bottom: -220px !important;
+    left: -80px !important;
     transform: rotate(-6.61deg);
     z-index: 1;
 }
@@ -56,7 +54,7 @@
     width: 430px;
     height: 430px;
     position: absolute !important;
-    top: -25%;
+    top: -150px;
     left: 0%;
     z-index: 1;
 }
@@ -65,7 +63,7 @@
     width: 230px;
     height: 230px;
     position: absolute !important;
-    bottom: -25%;
+    bottom: -120px;
     left: 20%;
     z-index: 1;
 }
