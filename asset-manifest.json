@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/GoUp/static/css/main.64d49eb0.css",
-    "main.js": "/GoUp/static/js/main.8846f3c5.js",
+    "main.css": "/GoUp/static/css/main.35015720.css",
+    "main.js": "/GoUp/static/js/main.252da941.js",
     "static/js/453.c6c4cd1f.chunk.js": "/GoUp/static/js/453.c6c4cd1f.chunk.js",
     "static/media/header.png": "/GoUp/static/media/header.3fcf70e04fcdd7fbf484.png",
     "static/media/wwdImg.png": "/GoUp/static/media/wwdImg.1cd19697cc0e7a544323.png",
@@ -11,14 +11,14 @@
     "static/media/niña 1.png": "/GoUp/static/media/niña 1.6622bc64089129e85dd9.png",
     "static/media/planeta 1.png": "/GoUp/static/media/planeta 1.c3269af6e38d2c62ed47.png",
     "static/media/GoUpLogo.png": "/GoUp/static/media/GoUpLogo.2c24e320a5544c89a999.png",
-    "static/media/GoUp_logo.svg": "/GoUp/static/media/GoUp_logo.2f9f40e55f10d6e5dbedeb1aae19f99c.svg",
+    "static/media/GoUp_logo.svg": "/GoUp/static/media/GoUp_logo.06c26e94a9b5e00e7e1ea69765c049cd.svg",
     "index.html": "/GoUp/index.html",
-    "main.64d49eb0.css.map": "/GoUp/static/css/main.64d49eb0.css.map",
-    "main.8846f3c5.js.map": "/GoUp/static/js/main.8846f3c5.js.map",
+    "main.35015720.css.map": "/GoUp/static/css/main.35015720.css.map",
+    "main.252da941.js.map": "/GoUp/static/js/main.252da941.js.map",
     "453.c6c4cd1f.chunk.js.map": "/GoUp/static/js/453.c6c4cd1f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.64d49eb0.css",
-    "static/js/main.8846f3c5.js"
+    "static/css/main.35015720.css",
+    "static/js/main.252da941.js"
   ]
 }
