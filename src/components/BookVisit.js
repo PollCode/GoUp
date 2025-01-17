@@ -11,7 +11,7 @@ const BookVisit = () => {
 
   return (
     <>
-      <div className={`row ${small? "book-visit-sm":"book-visit pb-5"}`}>
+      <div className={`row ${small ? "book-visit-sm" : "book-visit pb-5"}`}>
         <div className="col-lg-8 col-sm-3">
           <div className={`${small ? "portrait-small" : "portrait"}`}>
             {!small && (
